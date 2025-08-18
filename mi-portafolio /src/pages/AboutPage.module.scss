@@ -1,0 +1,51 @@
+.pageTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+.skillsTitle {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skillCategory {
+    background-color: var(--background-color, 5%);
+    padding: 1.5rem;
+    border-radius: 8px;
+
+    h4 {
+        color: var(--primary-color);
+        margin-top: 0;
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: 0.5rem 0;
+        }
+    }
+}

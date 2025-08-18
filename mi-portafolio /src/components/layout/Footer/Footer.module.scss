@@ -1,0 +1,19 @@
+// src/components/layout/Footer/Footer.module.scss
+@use '../../../assets/styles/variables' as var;
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem; // Añadimos más espacio
+    font-size: 0.9rem;
+    color: var.$color-slate; // Usamos una variable de SCSS
+}
+
+.footerLink {
+    color: var.$color-green; // Usamos una variable de SCSS
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

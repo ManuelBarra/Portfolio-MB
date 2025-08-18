@@ -1,0 +1,13 @@
+.pageTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.projectsGrid {
+    /* Dejamos preparado el contenedor para las tarjetas */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
