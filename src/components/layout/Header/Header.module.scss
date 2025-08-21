@@ -13,6 +13,15 @@
     transition: all 0.25s ease-in-out;
     height: 80px;
 
+    & .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
     &.scrolled {
         background-color: rgba(10, 25, 47, 0.85);
         backdrop-filter: blur(10px);

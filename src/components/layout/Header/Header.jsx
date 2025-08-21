@@ -46,90 +46,90 @@ const Header = () => {
 
     return (
         <header className={headerClasses}>
-            <div className={styles.logo}>
-                <NavLink to="/" onClick={closeMenu}>
-                    <img
-                        src={logoImage}
-                        alt="Logo de mi portafolio"
-                        className={styles.logoImage}
-                    />
-                </NavLink>
-            </div>
-
-            {/* Navegación para Desktop (sin cambios) */}
-            <nav className={styles.desktopNav}>
-                <ul className={styles.navList}>
-                    <li>
-                        <NavLink to="/">_inicio</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/projects">_proyectos</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/about">_sobre_mí</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/contact">_contacto</NavLink>
-                    </li>
-                </ul>
-                <a
-                    href="/CV-Manuel-Barra.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.resumeButton}
-                >
-                    Mi CV
-                </a>
-            </nav>
-
-            {/* Botón de Hamburguesa para Móvil */}
-            <button
-                className={`${styles.hamburger} ${
-                    isMenuOpen ? styles.open : ''
-                }`}
-                onClick={toggleMenu}
-                // --- MEJORA 2: Accesibilidad Dinámica ---
-                aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
-            >
-                <div />
-                <div />
-                <div />
-            </button>
-
-            {/* Navegación para Móvil (sin cambios en JSX) */}
-            <div className={mobileNavClasses}>
-                <nav>
-                    <ul className={styles.mobileNavList}>
+            <div className={styles.container}>
+                <div className={styles.logo}>
+                    <NavLink to="/" onClick={closeMenu}>
+                        <img
+                            src={logoImage}
+                            alt="Logo de mi portafolio"
+                            className={styles.logoImage}
+                        />
+                    </NavLink>
+                </div>
+                <nav className={styles.desktopNav}>
+                    <ul className={styles.navList}>
                         <li>
-                            <NavLink to="/" onClick={closeMenu}>
-                                _inicio
-                            </NavLink>
+                            <NavLink to="/">_inicio</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/projects" onClick={closeMenu}>
-                                _proyectos
-                            </NavLink>
+                            <NavLink to="/projects">_proyectos</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/about" onClick={closeMenu}>
-                                _sobre_mí
-                            </NavLink>
+                            <NavLink to="/about">_sobre_mí</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/contact" onClick={closeMenu}>
-                                _contacto
-                            </NavLink>
+                            <NavLink to="/contact">_contacto</NavLink>
                         </li>
                     </ul>
                     <a
                         href="/CV-Manuel-Barra.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={styles.resumeButtonMobile}
+                        className={styles.resumeButton}
                     >
                         Mi CV
                     </a>
                 </nav>
+
+                {/* Botón de Hamburguesa para Móvil */}
+                <button
+                    className={`${styles.hamburger} ${
+                        isMenuOpen ? styles.open : ''
+                    }`}
+                    onClick={toggleMenu}
+                    // --- MEJORA 2: Accesibilidad Dinámica ---
+                    aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+                >
+                    <div />
+                    <div />
+                    <div />
+                </button>
+
+                {/* Navegación para Móvil (sin cambios en JSX) */}
+                <div className={mobileNavClasses}>
+                    <nav>
+                        <ul className={styles.mobileNavList}>
+                            <li>
+                                <NavLink to="/" onClick={closeMenu}>
+                                    _inicio
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/projects" onClick={closeMenu}>
+                                    _proyectos
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/about" onClick={closeMenu}>
+                                    _sobre_mí
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/contact" onClick={closeMenu}>
+                                    _contacto
+                                </NavLink>
+                            </li>
+                        </ul>
+                        <a
+                            href="/CV-Manuel-Barra.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.resumeButtonMobile}
+                        >
+                            Mi CV
+                        </a>
+                    </nav>
+                </div>
             </div>
         </header>
     );
