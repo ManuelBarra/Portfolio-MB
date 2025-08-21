@@ -1,0 +1,113 @@
+.intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 5rem auto;
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: var(--text-color-secondary);
+    }
+}
+
+.formSection {
+    background-color: var(--background-color-secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+    }
+}
+
+
+.submitButton,
+.ctaButton {
+    display: inline-block;
+    color: var(--button-text-color);
+    background-color: var(--button-bg-color);
+    border: 1px solid var(--button-border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+    width: 100%;
+
+    &:hover {
+        background-color: var(--button-hover-bg-color);
+        transform: translateY(-3px);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.ctaButton {
+    width: auto;
+}
+
+.successMessage,
+.errorMessage {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.successMessage {
+    background-color: var(--primary-color-tint);
+    color: var(--primary-color);
+}
+
+.errorMessage {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+.bottomGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.directContact,
+.cebraticaCta {
+    h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        color: var(--text-color-secondary);
+    }
+}
+
+.directContact ul {
+    list-style: none;
+    padding: 0;
+    line-height: 2;
+
+    li strong {
+        color: var(--text-color-lightest);
+    }
+}

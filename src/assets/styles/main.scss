@@ -1,0 +1,78 @@
+// ... (código existente)
+
+// --- NUEVO: Animación de entrada ---
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html {
+    scroll-behavior: smooth; // Habilita el desplazamiento suave
+}
+
+body {
+    font-family: var(--font-family-body); // Aplicamos la nueva fuente al cuerpo
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); // Tamaño de fuente fluido para el texto base
+    background-color: var(--background-color);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-top: 160px;
+
+}
+
+main.container {
+    padding-top: 80px;
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    animation: fadeIn 0.5s ease-out; // Aplicamos la animación
+    overflow-x: hidden; // Evita el desbordamiento horizontals
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-headings); // Aplicamos la nueva fuente a los títulos
+    color: var(--text-color-lightest);
+    font-weight: 700; // Un peso más Bold para los títulos con Jost
+    line-height: 1.2; // Mejoramos el interlineado de los títulos
+}
+
+// Tamaños de fuente fluidos para los encabezados
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+// --- MEJORA: Transición más evidente en enlaces ---
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    position: relative;
+
+    &:hover {
+        color: var(--link-hover-color);
+        text-decoration: none;
+        transform: translateY(-2px);
+    }
+}

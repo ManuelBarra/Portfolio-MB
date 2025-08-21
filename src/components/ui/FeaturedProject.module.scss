@@ -1,0 +1,120 @@
+.featuredProject {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6rem;
+}
+
+.projectImage {
+    grid-column: 1 / 8;
+    grid-row: 1 / -1;
+    position: relative;
+
+    a {
+        display: block;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 8px;
+        filter: grayscale(80%) contrast(1) brightness(90%);
+        transition: all 0.3s ease;
+    }
+
+    &:hover img {
+        filter: grayscale(0%) contrast(1) brightness(100%);
+    }
+}
+
+.projectContent {
+    grid-column: 7 / -1;
+    grid-row: 1 / -1;
+    text-align: right;
+    padding: 2rem;
+    z-index: 2;
+}
+
+/* --- Modificador para la orientación derecha --- */
+.right {
+    .projectImage {
+        grid-column: 6 / -1;
+    }
+
+    .projectContent {
+        grid-column: 1 / 8;
+        text-align: left;
+    }
+}
+
+.projectTitle {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.projectDetails {
+    background-color: var(--background-color-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    p {
+        margin-bottom: 0.75rem;
+    }
+}
+
+.techList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.85rem;
+    color: var(--text-color-secondary);
+}
+
+.right .techList {
+    justify-content: flex-start;
+}
+
+.projectLink {
+    color: var(--text-color-lightest);
+    font-weight: 600;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+
+    .projectImage,
+    .right .projectImage,
+    .projectContent,
+    .right .projectContent {
+        grid-column: 1 / -1;
+    }
+
+    .projectImage {
+        height: 300px;
+        opacity: 0.15;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+
+    .projectContent,
+    .right .projectContent {
+        padding: 2rem 0;
+        text-align: left;
+    }
+
+    .techList,
+    .right .techList {
+        justify-content: flex-start;
+    }
+}

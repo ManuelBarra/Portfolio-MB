@@ -1,0 +1,138 @@
+@use '/src/assets/styles/mixings' as mixins;
+
+// ... (se mantienen los mixins y estilos generales de sección)
+.homePage {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem; // Aumentamos un poco el espacio entre secciones
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color-lightest);
+}
+
+.sectionIntro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.1rem;
+    color: var(--text-color-light);
+}
+
+/* --- Hero Section --- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    min-height: 70vh;
+
+    .mainTitle {
+        font-size: clamp(28px, 5vw, 48px);
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        font-size: clamp(24px, 4vw, 40px);
+        color: var(--text-color-lightest);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+    }
+
+    .description {
+        font-size: 1.1rem;
+        max-width: 650px;
+        color: var(--text-color-light);
+        line-height: 1.7;
+    }
+}
+
+/* --- Introduction & Cebratica Sections (estilos compartidos) --- */
+.introduction,
+.cebratica {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    line-height: 1.8;
+}
+
+/* --- Approach Section (Pillars) --- */
+.approach {
+    // Usa .sectionTitle y .sectionIntro
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.pillarsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.pillarItem {
+    background-color: var(--background-color-light);
+    padding: 2rem;
+    border-radius: 8px;
+
+    h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+    }
+
+    p {
+        line-height: 1.7;
+    }
+}
+
+/* --- CTA Button --- */
+.ctaButton {
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+        background-color: var(--primary-color-tint);
+        transform: translateY(-3px);
+    }
+}
+
+/* --- Final CTA Section --- */
+.ctaSection {
+    text-align: center;
+    background-color: var(--background-color-light);
+    padding: 4rem 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    h3 {
+        font-size: 2rem;
+        color: var(--text-color-lightest);
+    }
+
+    p {
+        max-width: 500px;
+    }
+}
