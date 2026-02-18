@@ -1,19 +1,24 @@
 // src/assets/styles/_variables.scss
 
 // ----------------------------------------------------
-// 1. VALORES CRUDOS (SCSS Variables)
+// 1. VALORES CRUDOS (SCSS Variables) — Paleta Celeste Pastel
 // ----------------------------------------------------
-// Paleta de colores con mayor contraste
-$color-darkest-navy: #020c1b;
-$color-dark-navy: #0a192f;
-$color-light-navy: #112240;
-$color-lightest-navy: #233554; // Para bordes y hover de superficies
-$color-slate: #8892b0;
-$color-light-slate: #a8b2d1;
-$color-lightest-slate: #ccd6f6;
-$color-white: #e6f1ff;
-$color-green: #64ffda;
-$color-green-tint: rgba($color-green, 0.1);
+
+// Fondos (de más claro a más oscuro)
+$color-bg-base: #f0f8ff;        // Alice blue — fondo de página
+$color-bg-surface: #e2f0fa;     // Superficie de tarjetas/paneles
+$color-bg-card: #cfe4f4;        // Tarjetas elevadas
+$color-bg-border: #aed0e9;      // Bordes visibles
+
+// Texto
+$color-text-heading: #0b2d4e;   // Títulos — azul muy oscuro
+$color-text-body: #1e4a6e;      // Cuerpo de texto
+$color-text-secondary: #4d7499; // Texto secundario/muted
+$color-text-muted: #89afc9;     // Placeholders, pies de página
+
+// Acento
+$color-accent: #2188c9;         // Azul cielo vibrante
+$color-accent-tint: rgba($color-accent, 0.1);
 
 // Fuentes
 $font-headings: 'Jost', 'Helvetica', 'Arial', sans-serif;
@@ -24,22 +29,22 @@ $font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 // 2. DEFINICIÓN DEL TEMA (CSS Custom Properties)
 // ----------------------------------------------------
 :root {
-    // Colores principales
-    --primary-color: #{$color-green};
-    --primary-color-tint: #{$color-green-tint};
-    --secondary-color: #{$color-light-navy};
+    // Acento principal
+    --primary-color: #{$color-accent};
+    --primary-color-tint: #{$color-accent-tint};
+    --secondary-color: #{$color-bg-card};
 
-    // Colores de fondo
-    --background-color: #{$color-darkest-navy};
-    --background-color-secondary: #{$color-dark-navy};
-    --background-color-light: #{$color-light-navy};
-    --background-color-lightest: #{$color-lightest-navy}; // Para bordes y hover
+    // Fondos
+    --background-color: #{$color-bg-base};
+    --background-color-secondary: #{$color-bg-surface};
+    --background-color-light: #{$color-bg-card};
+    --background-color-lightest: #{$color-bg-border};
 
-    // Colores de texto
-    --text-color: #{$color-light-slate};
-    --text-color-light: #{$color-lightest-slate}; // Para descripciones y subtítulos
-    --text-color-secondary: #{$color-slate};
-    --text-color-lightest: #{$color-lightest-slate};
+    // Texto
+    --text-color: #{$color-text-body};
+    --text-color-light: #{$color-text-heading};
+    --text-color-secondary: #{$color-text-secondary};
+    --text-color-lightest: #{$color-text-heading};
 
     // Fuentes
     --font-family-headings: #{$font-headings};
@@ -62,6 +67,9 @@ $font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
     --transition-default: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     // Sombras
-    --shadow-primary: 0 0 15px rgba(100, 255, 218, 0.2);
-    --shadow-card: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    --shadow-primary: 0 0 15px rgba(33, 136, 201, 0.25);
+    --shadow-card: 0 10px 30px -15px rgba(0, 40, 80, 0.15);
+
+    // Overlay para modales (fondo oscuro sobre tema claro)
+    --modal-backdrop: rgba(11, 45, 78, 0.65);
 }
