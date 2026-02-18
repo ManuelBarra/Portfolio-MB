@@ -83,8 +83,17 @@
 
 .pillarItem {
     background-color: var(--background-color-light);
+    border: 1px solid var(--background-color-lightest);
+    border-left: 3px solid var(--primary-color);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: var(--border-radius-lg);
+    transition: var(--transition-default);
+
+    &:hover {
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-primary);
+        transform: translateY(-4px);
+    }
 
     h3 {
         color: var(--primary-color);
@@ -94,6 +103,7 @@
 
     p {
         line-height: 1.7;
+        color: var(--text-color);
     }
 }
 
@@ -120,8 +130,9 @@
 .ctaSection {
     text-align: center;
     background-color: var(--background-color-light);
+    border: 1px solid var(--background-color-lightest);
     padding: 4rem 2rem;
-    border-radius: 8px;
+    border-radius: var(--border-radius-lg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,5 +145,6 @@
 
     p {
         max-width: 500px;
+        color: var(--text-color);
     }
 }
