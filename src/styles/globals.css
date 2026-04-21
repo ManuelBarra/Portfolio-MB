@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+/* ─── Phoenician Design System ─────────────────────────────── */
+
+@theme {
+  /* Colors */
+  --color-primary: #FF6B35;
+  --color-primary-dark: #E55A26;
+  --color-primary-light: #FF8C5C;
+  --color-secondary: #004E89;
+  --color-secondary-dark: #003A66;
+  --color-secondary-light: #1A6CA8;
+  --color-accent: #F7B32B;
+  --color-accent-dark: #D9960E;
+  --color-accent-light: #FACA5E;
+
+  --color-bg-light: #FAFAFA;
+  --color-bg-dark: #0A0E27;
+  --color-bg-card: #F0F0F0;
+  --color-bg-card-dark: #131729;
+
+  --color-text-primary: #0A0E27;
+  --color-text-secondary: #4A5568;
+  --color-text-light: #F5F5F5;
+  --color-text-muted: #718096;
+
+  --color-border: rgba(10, 14, 39, 0.12);
+  --color-border-dark: rgba(245, 245, 245, 0.12);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing (Fibonacci-inspired) */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6.5rem;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(10, 14, 39, 0.08), 0 1px 2px rgba(10, 14, 39, 0.06);
+  --shadow-md: 0 4px 16px rgba(10, 14, 39, 0.10), 0 2px 8px rgba(10, 14, 39, 0.06);
+  --shadow-lg: 0 10px 40px rgba(10, 14, 39, 0.12);
+  --shadow-glow: 0 0 30px rgba(255, 107, 53, 0.35);
+  --shadow-glow-gold: 0 0 20px rgba(247, 179, 43, 0.40);
+
+  /* Durations */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 600ms;
+  --duration-page: 800ms;
+
+  /* Easing */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ─── Reset + Base ──────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-light);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Typography ────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-style: italic;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+p {
+  line-height: 1.65;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* ─── Links ─────────────────────────────────────────────────── */
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* ─── Selection ─────────────────────────────────────────────── */
+
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+/* ─── Layout helpers ────────────────────────────────────────── */
+
+.asymmetric-layout {
+  display: grid;
+  grid-template-columns: 63fr 37fr;
+  min-height: 100svh;
+}
+
+.section-dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+.container-portfolio {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+/* ─── Utilities ─────────────────────────────────────────────── */
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ─── Fire glow effect ──────────────────────────────────────── */
+
+.glow-orange {
+  box-shadow: var(--shadow-glow);
+}
+
+.glow-gold {
+  box-shadow: var(--shadow-glow-gold);
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────  */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

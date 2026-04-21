@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "lastUpdated": "2026-04-21",
+    "author": "Manuel Barra Lazo"
+  },
+  "personal": {
+    "firstName": "Manuel",
+    "lastName": "Barra Lazo",
+    "title": "Frontend Developer & IA Lead",
+    "location": "Barcelona, Cataluña, España",
+    "email": "manuelbarralazo@gmail.com",
+    "phone": "+34 669425094",
+    "bio": "JavaScript developer con 5+ años creando experiencias web interactivas. Especializado en Frontend moderno, animaciones 3D y liderazgo técnico en proyectos de Inteligencia Artificial.",
+    "links": {
+      "github": "github.com/ManuelBarra",
+      "linkedin": "linkedin.com/in/manuelbarra"
+    }
+  },
+  "experience": [
+    {
+      "id": "genomcore",
+      "company": "Genomcore",
+      "position": "Frontend Developer | Lead IA",
+      "startDate": "2025-01",
+      "endDate": null,
+      "current": true,
+      "location": "Barcelona",
+      "description": "Desarrollo de la web del equipo de Marketing y piloto de IA para automatización de procesos internos. Liderazgo técnico del área de Inteligencia Artificial.",
+      "technologies": ["React", "TypeScript", "Next.js", "Python", "OpenAI API"],
+      "highlights": [
+        "Implementé un pipeline de IA que redujo el tiempo de análisis genómico en un 40%",
+        "Lideré la migración de la web a Next.js 15 con mejoras de rendimiento notables",
+        "Desarrollé componentes reutilizables para el design system corporativo"
+      ]
+    },
+    {
+      "id": "digitalmakers",
+      "company": "DigitalMakers",
+      "position": "Frontend Web Developer",
+      "startDate": "2022-06",
+      "endDate": "2024-12",
+      "current": false,
+      "location": "Barcelona (Remoto)",
+      "description": "Desarrollo de aplicaciones web y e-commerce para clientes de diversos sectores. Especialización en animaciones y experiencias visuales complejas.",
+      "technologies": ["React", "Vue.js", "JavaScript", "GSAP", "Three.js", "WordPress"],
+      "highlights": [
+        "Desarrollé más de 15 proyectos para clientes internacionales",
+        "Implementé animaciones 3D con Three.js en campañas de marketing",
+        "Reduje el tiempo de carga de sitios en un 60% mediante optimizaciones"
+      ]
+    },
+    {
+      "id": "freelance",
+      "company": "Freelance",
+      "position": "Desarrollador Web Full-Stack",
+      "startDate": "2020-03",
+      "endDate": "2022-05",
+      "current": false,
+      "location": "Remoto",
+      "description": "Desarrollo independiente de proyectos web para pequeñas y medianas empresas. Gestión completa del ciclo de vida del proyecto.",
+      "technologies": ["JavaScript", "PHP", "WordPress", "MySQL", "CSS3"],
+      "highlights": [
+        "Más de 30 proyectos completados con alta satisfacción del cliente",
+        "Especialización en e-commerce con WooCommerce",
+        "Desarrollo de plugins personalizados para WordPress"
+      ]
+    }
+  ],
+  "skills": [
+    { "id": "js", "name": "JavaScript", "category": "Lenguajes", "level": 5, "icon": "⚡" },
+    { "id": "ts", "name": "TypeScript", "category": "Lenguajes", "level": 4, "icon": "🔷" },
+    { "id": "react", "name": "React", "category": "Frameworks", "level": 5, "icon": "⚛️" },
+    { "id": "nextjs", "name": "Next.js", "category": "Frameworks", "level": 5, "icon": "▲" },
+    { "id": "vue", "name": "Vue.js", "category": "Frameworks", "level": 4, "icon": "💚" },
+    { "id": "threejs", "name": "Three.js / R3F", "category": "3D & Visual", "level": 4, "icon": "🎲" },
+    { "id": "gsap", "name": "GSAP", "category": "3D & Visual", "level": 4, "icon": "✨" },
+    { "id": "css", "name": "CSS Avanzado", "category": "Estilos", "level": 5, "icon": "🎨" },
+    { "id": "tailwind", "name": "Tailwind CSS", "category": "Estilos", "level": 5, "icon": "💨" },
+    { "id": "python", "name": "Python", "category": "Lenguajes", "level": 3, "icon": "🐍" },
+    { "id": "ai", "name": "IA / LLMs", "category": "Especialidades", "level": 4, "icon": "🤖" },
+    { "id": "git", "name": "Git / GitHub", "category": "Herramientas", "level": 5, "icon": "🌿" }
+  ],
+  "projects": [
+    {
+      "id": "portfolio",
+      "name": "Portfolio 3D Phoenician",
+      "description": "Portfolio personal con escena 3D interactiva, tema visual Fénix y animaciones GSAP complejas. Construcción completa en Next.js 15 + React Three Fiber.",
+      "url": "https://manuelbarra.dev",
+      "repo": "github.com/ManuelBarra/portfolio",
+      "technologies": ["Next.js", "React Three Fiber", "GSAP", "TypeScript", "Tailwind"],
+      "featured": true
+    }
+  ],
+  "education": [
+    {
+      "id": "dam",
+      "institution": "CIPFP Batoi",
+      "degree": "Grado Superior",
+      "field": "Desarrollo de Aplicaciones Multiplataforma (DAM)",
+      "startDate": "2018-09",
+      "endDate": "2020-06",
+      "current": false,
+      "location": "Alcoy, Valencia"
+    }
+  ],
+  "theme": {
+    "primary": "#FF6B35",
+    "secondary": "#004E89",
+    "accent": "#F7B32B"
+  }
+}
