@@ -14,11 +14,15 @@ export interface ResumeLinks {
 export interface ResumePersonal {
   firstName: string
   lastName: string
+  alias?: string
   title: string
+  tagline?: string
+  status?: string
   location: string
   email: string
   phone?: string
   bio: string
+  about?: string[]
   links: ResumeLinks
   avatar?: string
 }

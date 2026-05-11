@@ -1,94 +1,179 @@
 'use client'
 
-import dynamic from 'next/dynamic'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useResume } from '@/hooks/useResume'
-import { Hero } from '@/components/cv/Hero'
-import { Experience } from '@/components/cv/Experience'
-import { Skills } from '@/components/cv/Skills'
-import { Projects } from '@/components/cv/Projects'
+import { RoomChrome } from '@/components/rooms/RoomChrome'
+import { HeroRoom } from '@/components/rooms/HeroRoom'
+import { AboutRoom } from '@/components/rooms/AboutRoom'
+import { ExperienceRoom } from '@/components/rooms/ExperienceRoom'
+import { EducationRoom } from '@/components/rooms/EducationRoom'
+import { SkillsRoom } from '@/components/rooms/SkillsRoom'
+import { ProjectsRoom } from '@/components/rooms/ProjectsRoom'
+import { ContactRoom } from '@/components/rooms/ContactRoom'
+import { HudTop } from '@/components/hud/HudTop'
+import { HudBottom } from '@/components/hud/HudBottom'
+import { NavArrows } from '@/components/hud/NavArrows'
+import { CustomCursor } from '@/components/hud/CustomCursor'
+import { BootOverlay } from '@/components/hud/BootOverlay'
+import { HeroMesh } from '@/components/3d/HeroMesh'
 
-const Scene = dynamic(() => import('@/components/3d/Scene').then((m) => m.Scene), {
-  ssr: false,
-  loading: () => (
-    <div
-      style={{
-        width: '100%',
-        height: '100svh',
-        background: 'linear-gradient(180deg, #0A0E27 0%, #0F1535 60%, #1A0A05 100%)',
-      }}
-    />
-  ),
-})
-
-function LoadingScreen() {
-  return (
-    <div
-      style={{
-        minHeight: '100svh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: 'var(--color-bg-dark)',
-        color: 'var(--color-text-light)',
-        fontFamily: 'var(--font-serif)',
-        fontSize: '1.5rem',
-        fontStyle: 'italic',
-      }}
-    >
-      <span style={{ color: 'var(--color-primary)' }}>✦</span>&nbsp;Cargando…
-    </div>
-  )
-}
+const TOTAL_ROOMS = 7
+const ROOM_TAGS = ['home', 'about', 'experience', 'education', 'skills', 'projects', 'contact']
 
 export default function Home() {
   const { resume, loading } = useResume()
+  const [activeIdx, setActiveIdx] = useState(0)
+  const [booted, setBooted] = useState(false)
+  const wheelLock = useRef(false)
+  const touchStart = useRef(0)
 
-  if (loading) return <LoadingScreen />
+  const goTo = useCallback((idx: number) => {
+    const clamped = Math.max(0, Math.min(TOTAL_ROOMS - 1, idx))
+    setActiveIdx(clamped)
+  }, [])
+
+  const prev = useCallback(() => goTo(activeIdx - 1), [activeIdx, goTo])
+  const next = useCallback(() => goTo(activeIdx + 1), [activeIdx, goTo])
+
+  // Keyboard navigation
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (!booted) return
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault()
+        goTo(activeIdx - 1)
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault()
+        goTo(activeIdx + 1)
+      } else if (e.key === 'Escape') {
+        goTo(0)
+      } else {
+        const num = parseInt(e.key)
+        if (num >= 1 && num <= TOTAL_ROOMS) {
+          goTo(num - 1)
+        }
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [activeIdx, booted, goTo])
+
+  // Wheel navigation
+  useEffect(() => {
+    function onWheel(e: WheelEvent) {
+      if (!booted || wheelLock.current) return
+      e.preventDefault()
+
+      const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX
+      if (Math.abs(delta) < 30) return
+
+      wheelLock.current = true
+      if (delta > 0) goTo(activeIdx + 1)
+      else goTo(activeIdx - 1)
+
+      setTimeout(() => { wheelLock.current = false }, 700)
+    }
+    window.addEventListener('wheel', onWheel, { passive: false })
+    return () => window.removeEventListener('wheel', onWheel)
+  }, [activeIdx, booted, goTo])
+
+  // Touch swipe
+  useEffect(() => {
+    function onTouchStart(e: TouchEvent) {
+      touchStart.current = e.touches[0].clientX
+    }
+    function onTouchEnd(e: TouchEvent) {
+      if (!booted) return
+      const diff = touchStart.current - e.changedTouches[0].clientX
+      if (Math.abs(diff) > 60) {
+        if (diff > 0) goTo(activeIdx + 1)
+        else goTo(activeIdx - 1)
+      }
+    }
+    window.addEventListener('touchstart', onTouchStart, { passive: true })
+    window.addEventListener('touchend', onTouchEnd, { passive: true })
+    return () => {
+      window.removeEventListener('touchstart', onTouchStart)
+      window.removeEventListener('touchend', onTouchEnd)
+    }
+  }, [activeIdx, booted, goTo])
+
+  const handleBootComplete = useCallback(() => {
+    setBooted(true)
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="boot-overlay">
+        <div className="boot-text">
+          <div className="boot-text__line" style={{ opacity: 1 }}>Loading data...</div>
+        </div>
+      </div>
+    )
+  }
+
   if (!resume) return null
 
   return (
-    <main>
-      {/* ── Hero Section: Canvas 3D + Info ─────────────────── */}
-      <section className="asymmetric-layout" style={{ minHeight: '100svh' }}>
-        {/* Canvas 3D — 63% */}
-        <div style={{ position: 'relative', overflow: 'hidden' }}>
-          <Scene />
-        </div>
+    <div className="scanlines film-grain">
+      {/* Boot screen */}
+      {!booted && <BootOverlay onComplete={handleBootComplete} />}
 
-        {/* Hero Info — 37% */}
+      {/* Custom cursor */}
+      <CustomCursor />
+
+      {/* HUD */}
+      {booted && (
+        <>
+          <HudTop activeIdx={activeIdx} />
+          <HudBottom activeIdx={activeIdx} onNavigate={goTo} />
+          <NavArrows activeIdx={activeIdx} total={TOTAL_ROOMS} onPrev={prev} onNext={next} />
+        </>
+      )}
+
+      {/* World */}
+      <div className="world-viewport">
         <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: 'clamp(2rem, 5vw, 4rem)',
-            background: 'var(--color-bg-light)',
-            borderLeft: '1px solid var(--color-border)',
-          }}
+          className="world"
+          style={{ transform: `translate3d(-${activeIdx * 100}vw, 0, 0)` }}
         >
-          <Hero resume={resume} />
-        </div>
-      </section>
+          {/* Room 1: Hero */}
+          <RoomChrome tag={ROOM_TAGS[0]} number={1}>
+            <HeroMesh />
+            <HeroRoom personal={resume.personal} />
+          </RoomChrome>
 
-      {/* ── Experience ─────────────────────────────────────── */}
-      <section className="section-dark" style={{ padding: 'var(--spacing-3xl) 0' }}>
-        <div className="container-portfolio">
-          <Experience experience={resume.experience} />
-        </div>
-      </section>
+          {/* Room 2: About */}
+          <RoomChrome tag={ROOM_TAGS[1]} number={2}>
+            <AboutRoom personal={resume.personal} />
+          </RoomChrome>
 
-      {/* ── Skills ─────────────────────────────────────────── */}
-      <section style={{ padding: 'var(--spacing-3xl) 0', background: 'var(--color-bg-light)' }}>
-        <div className="container-portfolio">
-          <Skills skills={resume.skills} />
-        </div>
-      </section>
+          {/* Room 3: Experience */}
+          <RoomChrome tag={ROOM_TAGS[2]} number={3}>
+            <ExperienceRoom experience={resume.experience} />
+          </RoomChrome>
 
-      {/* ── Proyectos ──────────────────────────────────────── */}
-      <section className="section-dark" style={{ padding: 'var(--spacing-3xl) 0' }}>
-        <div className="container-portfolio">
-          <Projects projects={resume.projects} />
+          {/* Room 4: Education */}
+          <RoomChrome tag={ROOM_TAGS[3]} number={4}>
+            <EducationRoom education={resume.education} />
+          </RoomChrome>
+
+          {/* Room 5: Skills */}
+          <RoomChrome tag={ROOM_TAGS[4]} number={5}>
+            <SkillsRoom skills={resume.skills} />
+          </RoomChrome>
+
+          {/* Room 6: Projects */}
+          <RoomChrome tag={ROOM_TAGS[5]} number={6}>
+            <ProjectsRoom projects={resume.projects} />
+          </RoomChrome>
+
+          {/* Room 7: Contact */}
+          <RoomChrome tag={ROOM_TAGS[6]} number={7}>
+            <ContactRoom personal={resume.personal} />
+          </RoomChrome>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   )
 }

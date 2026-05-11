@@ -17,12 +17,25 @@ export function Hero({ resume }: HeroProps) {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap
-        .timeline({ defaults: { ease: 'power3.out' } })
-        .fromTo(nameRef.current, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.9 })
-        .fromTo(titleRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.5')
-        .fromTo(bioRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.3')
-        .fromTo(linksRef.current, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5 }, '-=0.2')
+      // Cinemática entrada (6 segundos)
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+      
+      tl.fromTo(nameRef.current, 
+         { opacity: 0, y: 50, filter: 'blur(10px)' }, 
+         { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.5, delay: 0.5 }
+        )
+        .fromTo(titleRef.current, 
+         { opacity: 0, x: -20 }, 
+         { opacity: 1, x: 0, duration: 1.2 }, '-=0.8'
+        )
+        .fromTo(bioRef.current, 
+         { opacity: 0, y: 20 }, 
+         { opacity: 1, y: 0, duration: 1.5 }, '-=0.8'
+        )
+        .fromTo(linksRef.current, 
+         { opacity: 0, scale: 0.9 }, 
+         { opacity: 1, scale: 1, duration: 1 }, '-=1'
+        )
     }, containerRef)
 
     return () => ctx.revert()

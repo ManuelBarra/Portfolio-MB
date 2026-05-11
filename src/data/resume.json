@@ -1,112 +1,288 @@
 {
   "metadata": {
-    "version": "2.0",
-    "lastUpdated": "2026-04-21",
-    "author": "Manuel Barra Lazo"
+    "version": "3.0",
+    "lastUpdated": "2026-04-27",
+    "author": "Manuel Barra"
   },
   "personal": {
     "firstName": "Manuel",
-    "lastName": "Barra Lazo",
-    "title": "Frontend Developer & IA Lead",
-    "location": "Barcelona, Cataluña, España",
-    "email": "manuelbarralazo@gmail.com",
+    "lastName": "Barra",
+    "alias": "manu_dev",
+    "title": "Frontend Developer & Creative Technologist",
+    "tagline": "Building interfaces that feel alive",
+    "status": "Available for projects",
+    "location": "Barcelona, Spain",
+    "email": "contacto@cebratica.com",
     "phone": "+34 669425094",
-    "bio": "JavaScript developer con 5+ años creando experiencias web interactivas. Especializado en Frontend moderno, animaciones 3D y liderazgo técnico en proyectos de Inteligencia Artificial.",
+    "bio": "Desarrollador Frontend especializado en convertir ideas visuales en experiencias web fluidas y de alto rendimiento. Con formación como Full Stack Developer, mi especialidad es el código limpio, rendimiento optimizado y una ejecución técnica impecable del diseño. He trabajado con marcas como Roca, Guía Repsol y CaixaBank, y soy co-fundador de Cebratica.",
+    "about": [
+      "Ingeniero frontend con +5 años construyendo interfaces de alto impacto. Especializado en React, Next.js y animaciones web complejas.",
+      "Co-fundador de Cebratica, un estudio donde fusionamos diseño estratégico con desarrollo técnico para crear experiencias digitales memorables.",
+      "Apasionado por el código limpio, la performance web y las experiencias interactivas que conectan emocionalmente con el usuario."
+    ],
     "links": {
       "github": "github.com/ManuelBarra",
-      "linkedin": "linkedin.com/in/manuelbarra"
+      "linkedin": "linkedin.com/in/manuelbarra",
+      "website": "cebratica.com"
     }
   },
   "experience": [
     {
-      "id": "genomcore",
-      "company": "Genomcore",
-      "position": "Frontend Developer | Lead IA",
-      "startDate": "2025-01",
+      "id": "cebratica",
+      "company": "Cebratica",
+      "position": "Co-founder / Frontend Specialist",
+      "startDate": "2024-01",
       "endDate": null,
       "current": true,
       "location": "Barcelona",
-      "description": "Desarrollo de la web del equipo de Marketing y piloto de IA para automatización de procesos internos. Liderazgo técnico del área de Inteligencia Artificial.",
-      "technologies": ["React", "TypeScript", "Next.js", "Python", "OpenAI API"],
+      "description": "Estudio de diseño y desarrollo donde fusiono la experiencia Frontend con branding estratégico para crear soluciones web de alto impacto que conectan emocionalmente con el usuario.",
+      "technologies": ["React", "Next.js", "TypeScript", "Three.js", "GSAP", "Branding Strategy"],
       "highlights": [
-        "Implementé un pipeline de IA que redujo el tiempo de análisis genómico en un 40%",
-        "Lideré la migración de la web a Next.js 15 con mejoras de rendimiento notables",
-        "Desarrollé componentes reutilizables para el design system corporativo"
+        "Co-fundación y dirección técnica del estudio",
+        "Proyectos web de alto impacto para clientes premium",
+        "Combinación de diseño estratégico y desarrollo técnico"
       ]
     },
     {
-      "id": "digitalmakers",
-      "company": "DigitalMakers",
-      "position": "Frontend Web Developer",
-      "startDate": "2022-06",
+      "id": "vass-lead",
+      "company": "Vass / DigitalMakers",
+      "position": "Frontend Lead — CaixaBank International",
+      "startDate": "2023-06",
       "endDate": "2024-12",
       "current": false,
-      "location": "Barcelona (Remoto)",
-      "description": "Desarrollo de aplicaciones web y e-commerce para clientes de diversos sectores. Especialización en animaciones y experiencias visuales complejas.",
-      "technologies": ["React", "Vue.js", "JavaScript", "GSAP", "Three.js", "WordPress"],
+      "location": "Barcelona",
+      "description": "Liderazgo técnico frontend del ecosistema de plataformas internacionales de CaixaBank, coordinando equipo y asegurando la calidad técnica en múltiples mercados europeos.",
+      "technologies": ["JavaScript", "AEM", "SASS", "Figma", "Git"],
       "highlights": [
-        "Desarrollé más de 15 proyectos para clientes internacionales",
-        "Implementé animaciones 3D con Three.js en campañas de marketing",
-        "Reduje el tiempo de carga de sitios en un 60% mediante optimizaciones"
+        "Plataformas internacionales CaixaBank (IT, FR, DE, MA, PL, UK)",
+        "Banca Privada, Banca Premier y Wealth Management Luxembourg",
+        "Coordinación de equipo frontend y revisión de código"
+      ]
+    },
+    {
+      "id": "vass-dev",
+      "company": "Vass / DigitalMakers",
+      "position": "Frontend Developer",
+      "startDate": "2022-04",
+      "endDate": "2023-05",
+      "current": false,
+      "location": "Barcelona",
+      "description": "Desarrollo, mantenimiento y gestión de plataformas web corporativas de gran escala para clientes de primer nivel.",
+      "technologies": ["JavaScript", "jQuery", "SASS", "Bootstrap", "AEM", "Liferay"],
+      "highlights": [
+        "Desarrollo web para Roca y Guía Repsol",
+        "Plataformas AgroBank",
+        "Implementación de design systems corporativos"
+      ]
+    },
+    {
+      "id": "ia-lead",
+      "company": "Cebratica Labs",
+      "position": "IA Lead — Automation & AI Tools",
+      "startDate": "2024-06",
+      "endDate": null,
+      "current": true,
+      "location": "Barcelona",
+      "description": "Investigación y desarrollo de herramientas de automatización con IA aplicadas a procesos creativos y de desarrollo web.",
+      "technologies": ["Python", "Claude API", "OpenAI", "LangChain", "TypeScript"],
+      "highlights": [
+        "Desarrollo de pipelines de automatización con IA",
+        "Integración de modelos LLM en flujos de trabajo creativos",
+        "Prototipado de herramientas AI-first para diseño y código"
+      ]
+    },
+    {
+      "id": "genomcore",
+      "company": "Genomcore",
+      "position": "Frontend Developer",
+      "startDate": "2021-06",
+      "endDate": "2022-03",
+      "current": false,
+      "location": "Barcelona (Remote)",
+      "description": "Responsable del desarrollo web integral y restyling de los sitios principales de la compañía de biotecnología.",
+      "technologies": ["JavaScript", "PHP", "Vue.js", "jQuery", "WordPress", "SASS"],
+      "highlights": [
+        "Restyling completo de genomcore.com y madeofgenes.com",
+        "Arquitectura de componentes reutilizables",
+        "Optimización de rendimiento y SEO"
+      ]
+    },
+    {
+      "id": "inmotion",
+      "company": "Inmotion Real Estate Media",
+      "position": "Frontend Developer",
+      "startDate": "2020-06",
+      "endDate": "2021-05",
+      "current": false,
+      "location": "Remote (North America)",
+      "description": "Desarrollo de sitios web a medida para el sector inmobiliario de Norteamérica.",
+      "technologies": ["JavaScript", "PHP", "Vue.js", "WordPress", "SASS"],
+      "highlights": [
+        "Plataforma multifamily para mercado norteamericano",
+        "Optimización SEO para mercados angloparlantes",
+        "Interfaces de alta conversión para activos inmobiliarios"
+      ]
+    },
+    {
+      "id": "vinsnus",
+      "company": "Clos del Portal & Vins Nus",
+      "position": "Frontend Developer / Web Manager",
+      "startDate": "2019-01",
+      "endDate": "2020-05",
+      "current": false,
+      "location": "Catalonia",
+      "description": "Gestión integral de los sitios web para marcas vinícolas de autor en Cataluña.",
+      "technologies": ["JavaScript", "PHP", "WordPress", "jQuery", "SASS"],
+      "highlights": [
+        "Diseño y desarrollo para marcas de vino de autor",
+        "Gestión integral de hosting y seguridad",
+        "E-commerce y catálogos de productos"
       ]
     },
     {
       "id": "freelance",
       "company": "Freelance",
-      "position": "Desarrollador Web Full-Stack",
-      "startDate": "2020-03",
-      "endDate": "2022-05",
+      "position": "Web Developer",
+      "startDate": "2018-01",
+      "endDate": "2019-01",
       "current": false,
-      "location": "Remoto",
-      "description": "Desarrollo independiente de proyectos web para pequeñas y medianas empresas. Gestión completa del ciclo de vida del proyecto.",
-      "technologies": ["JavaScript", "PHP", "WordPress", "MySQL", "CSS3"],
+      "location": "Barcelona",
+      "description": "Desarrollo web freelance para pequeñas empresas y proyectos personales.",
+      "technologies": ["HTML", "CSS", "JavaScript", "WordPress", "PHP"],
       "highlights": [
-        "Más de 30 proyectos completados con alta satisfacción del cliente",
-        "Especialización en e-commerce con WooCommerce",
-        "Desarrollo de plugins personalizados para WordPress"
+        "Desarrollo de sitios web para clientes locales",
+        "Primeros proyectos con JavaScript y frameworks CSS",
+        "Fundamentos de UX y diseño responsive"
+      ]
+    },
+    {
+      "id": "career-shift",
+      "company": "Career Shift",
+      "position": "Transition to Tech",
+      "startDate": "2017-01",
+      "endDate": "2018-01",
+      "current": false,
+      "location": "Barcelona",
+      "description": "Transición profesional al sector tecnológico. Formación autodidacta intensiva en desarrollo web.",
+      "technologies": ["HTML", "CSS", "JavaScript", "Git"],
+      "highlights": [
+        "Formación autodidacta en desarrollo web",
+        "Primeros proyectos de práctica",
+        "Decisión de cambio de carrera hacia tecnología"
       ]
     }
   ],
   "skills": [
-    { "id": "js", "name": "JavaScript", "category": "Lenguajes", "level": 5, "icon": "⚡" },
-    { "id": "ts", "name": "TypeScript", "category": "Lenguajes", "level": 4, "icon": "🔷" },
-    { "id": "react", "name": "React", "category": "Frameworks", "level": 5, "icon": "⚛️" },
-    { "id": "nextjs", "name": "Next.js", "category": "Frameworks", "level": 5, "icon": "▲" },
-    { "id": "vue", "name": "Vue.js", "category": "Frameworks", "level": 4, "icon": "💚" },
-    { "id": "threejs", "name": "Three.js / R3F", "category": "3D & Visual", "level": 4, "icon": "🎲" },
-    { "id": "gsap", "name": "GSAP", "category": "3D & Visual", "level": 4, "icon": "✨" },
-    { "id": "css", "name": "CSS Avanzado", "category": "Estilos", "level": 5, "icon": "🎨" },
-    { "id": "tailwind", "name": "Tailwind CSS", "category": "Estilos", "level": 5, "icon": "💨" },
-    { "id": "python", "name": "Python", "category": "Lenguajes", "level": 3, "icon": "🐍" },
-    { "id": "ai", "name": "IA / LLMs", "category": "Especialidades", "level": 4, "icon": "🤖" },
-    { "id": "git", "name": "Git / GitHub", "category": "Herramientas", "level": 5, "icon": "🌿" }
+    { "id": "js", "name": "JavaScript (ES6+)", "category": "Languages", "level": 5, "icon": "js" },
+    { "id": "ts", "name": "TypeScript", "category": "Languages", "level": 4, "icon": "ts" },
+    { "id": "html", "name": "HTML5 / Semantic", "category": "Languages", "level": 5, "icon": "html" },
+    { "id": "css-lang", "name": "CSS3 / SASS", "category": "Languages", "level": 5, "icon": "css" },
+    { "id": "php", "name": "PHP", "category": "Languages", "level": 4, "icon": "php" },
+    { "id": "python", "name": "Python", "category": "Languages", "level": 3, "icon": "py" },
+    { "id": "react", "name": "React", "category": "Frameworks", "level": 5, "icon": "react" },
+    { "id": "nextjs", "name": "Next.js", "category": "Frameworks", "level": 5, "icon": "next" },
+    { "id": "vue", "name": "Vue.js", "category": "Frameworks", "level": 4, "icon": "vue" },
+    { "id": "astro", "name": "Astro", "category": "Frameworks", "level": 3, "icon": "astro" },
+    { "id": "tailwind", "name": "Tailwind CSS", "category": "Styling", "level": 5, "icon": "tw" },
+    { "id": "sass", "name": "SASS / SCSS", "category": "Styling", "level": 5, "icon": "sass" },
+    { "id": "css-modern", "name": "Modern CSS", "category": "Styling", "level": 5, "icon": "css" },
+    { "id": "framer", "name": "Framer Motion", "category": "Styling", "level": 4, "icon": "fm" },
+    { "id": "threejs", "name": "Three.js / R3F", "category": "Creative", "level": 4, "icon": "3d" },
+    { "id": "gsap", "name": "GSAP", "category": "Creative", "level": 4, "icon": "gsap" },
+    { "id": "webgl", "name": "WebGL / Shaders", "category": "Creative", "level": 3, "icon": "gl" },
+    { "id": "figma", "name": "Figma", "category": "Creative", "level": 4, "icon": "fig" },
+    { "id": "git", "name": "Git / GitHub", "category": "Tools", "level": 5, "icon": "git" },
+    { "id": "vscode", "name": "VS Code / Cursor", "category": "Tools", "level": 5, "icon": "code" },
+    { "id": "node", "name": "Node.js", "category": "Tools", "level": 4, "icon": "node" },
+    { "id": "wordpress", "name": "WordPress / WP CLI", "category": "Tools", "level": 4, "icon": "wp" },
+    { "id": "ai-tools", "name": "AI Tools (Claude, GPT)", "category": "AI & Automation", "level": 5, "icon": "ai" },
+    { "id": "langchain", "name": "LangChain", "category": "AI & Automation", "level": 3, "icon": "lc" },
+    { "id": "prompt-eng", "name": "Prompt Engineering", "category": "AI & Automation", "level": 5, "icon": "pe" },
+    { "id": "automation", "name": "Automation Pipelines", "category": "AI & Automation", "level": 4, "icon": "auto" }
   ],
   "projects": [
     {
-      "id": "portfolio",
-      "name": "Portfolio 3D Phoenician",
-      "description": "Portfolio personal con escena 3D interactiva, tema visual Fénix y animaciones GSAP complejas. Construcción completa en Next.js 15 + React Three Fiber.",
-      "url": "https://manuelbarra.dev",
-      "repo": "github.com/ManuelBarra/portfolio",
-      "technologies": ["Next.js", "React Three Fiber", "GSAP", "TypeScript", "Tailwind"],
+      "id": "cebratica",
+      "name": "Cebratica Studio",
+      "description": "Co-fundación y dirección técnica de un estudio de diseño y desarrollo web. Identidad visual, plataforma y experiencia de marca completa.",
+      "url": "https://cebratica.com",
+      "repo": "",
+      "technologies": ["Next.js", "React", "TypeScript", "GSAP", "Three.js"],
       "featured": true
+    },
+    {
+      "id": "manu-os",
+      "name": "MANU.OS — This Portfolio",
+      "description": "Portfolio interactivo cyberpunk con navegación horizontal, HUD overlay, malla 3D reactiva al cursor y estética retro-futurista.",
+      "url": "",
+      "repo": "github.com/ManuelBarra/manu-os",
+      "technologies": ["Next.js", "TypeScript", "Canvas 2D", "GSAP", "CSS Custom Properties"],
+      "featured": true
+    },
+    {
+      "id": "multifamily",
+      "name": "The Multi-Family Firm",
+      "description": "Plataforma inmobiliaria para mercado norteamericano. Presentación de activos multifamily con alto rendimiento y UX optimizada.",
+      "url": "https://multifamilyfirm.com",
+      "repo": "",
+      "technologies": ["JavaScript", "PHP", "Vue.js", "WordPress"],
+      "featured": true
+    },
+    {
+      "id": "genomcore-proj",
+      "name": "Genomcore Digital Presence",
+      "description": "Restyling y desarrollo integral del ecosistema digital de empresa biotecnológica.",
+      "url": "https://genomcore.com",
+      "repo": "",
+      "technologies": ["Vue.js", "JavaScript", "PHP", "WordPress"],
+      "featured": false
     }
   ],
   "education": [
     {
-      "id": "dam",
-      "institution": "CIPFP Batoi",
-      "degree": "Grado Superior",
-      "field": "Desarrollo de Aplicaciones Multiplataforma (DAM)",
-      "startDate": "2018-09",
+      "id": "isdi",
+      "institution": "ISDI Coders",
+      "degree": "Bootcamp Full Stack",
+      "field": "Full Stack Development (JavaScript)",
+      "startDate": "2021-07",
+      "endDate": "2021-09",
+      "current": false,
+      "location": "Barcelona"
+    },
+    {
+      "id": "escolaespai",
+      "institution": "Escola Espai",
+      "degree": "Specialization",
+      "field": "Web Development & Frontend",
+      "startDate": "2019-09",
       "endDate": "2020-06",
       "current": false,
-      "location": "Alcoy, Valencia"
+      "location": "Barcelona"
+    },
+    {
+      "id": "self-taught",
+      "institution": "Self-taught",
+      "degree": "Continuous Learning",
+      "field": "React, Three.js, TypeScript, AI",
+      "startDate": "2018-01",
+      "endDate": null,
+      "current": true,
+      "location": "Online"
+    },
+    {
+      "id": "ai-cert",
+      "institution": "Anthropic / OpenAI",
+      "degree": "Certifications",
+      "field": "AI Engineering & Prompt Design",
+      "startDate": "2024-01",
+      "endDate": null,
+      "current": true,
+      "location": "Online"
     }
   ],
   "theme": {
-    "primary": "#FF6B35",
-    "secondary": "#004E89",
-    "accent": "#F7B32B"
+    "primary": "#3DDCFF",
+    "secondary": "#5B7CFF",
+    "accent": "#FF3CAC"
   }
 }

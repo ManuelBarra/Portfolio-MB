@@ -247,6 +247,50 @@ export default function AdminPage() {
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', lineHeight: 1.65 }}>
             {formData.personal.bio}
           </p>
+
+          {/* Color Theme Picker */}
+          <div style={{ marginTop: '2.5rem', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '2rem' }}>
+            <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--color-accent)', letterSpacing: '0.1em' }}>
+              🎨 TEMA DE COLORES
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {[
+                { key: 'primary', label: 'Color Principal' },
+                { key: 'secondary', label: 'Color Secundario' },
+                { key: 'accent', label: 'Color de Acento' },
+              ].map(({ key, label }) => (
+                <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <input
+                    type="color"
+                    value={formData.theme[key as keyof typeof formData.theme] || '#FF6B35'}
+                    onChange={(e) => {
+                      const updated = { ...formData, theme: { ...formData.theme, [key]: e.target.value } }
+                      setFormData(updated)
+                      // Preview en vivo: actualizar variables CSS inmediatamente
+                      document.documentElement.style.setProperty(`--color-${key}`, e.target.value)
+                    }}
+                    style={{
+                      width: '2.5rem',
+                      height: '2rem',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      background: 'transparent',
+                    }}
+                  />
+                  <span style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-mono)' }}>
+                    {label}:{' '}
+                    <span style={{ color: 'var(--color-text-light)' }}>
+                      {formData.theme[key as keyof typeof formData.theme]}
+                    </span>
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p style={{ marginTop: '0.75rem', fontSize: '0.72rem', color: 'rgba(255,255,255,0.25)', fontFamily: 'var(--font-mono)' }}>
+              Los cambios se aplican en tiempo real. Guarda para persistirlos.
+            </p>
+          </div>
         </section>
       </div>
     </div>
