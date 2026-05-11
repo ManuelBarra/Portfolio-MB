@@ -213,7 +213,7 @@ export default function AdminPage() {
               variant="ghost"
               size="sm"
               onClick={() => {
-                const newProject = { id: `proj-${Date.now()}`, name: 'Nuevo Proyecto', description: '', url: '', technologies: [] };
+                const newProject = { id: `proj-${Date.now()}`, name: 'Nuevo Proyecto', description: '', url: '', technologies: [], featured: false };
                 setFormData({ ...formData, projects: [...formData.projects, newProject] });
               }}
             >
