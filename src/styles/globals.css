@@ -938,67 +938,259 @@ a:hover {
   box-shadow: 0 0 4px var(--color-neon);
 }
 
-/* ─── Projects Room ──────────────────────────────────────── */
+/* ─── Projects Room — 3D Coverflow Gallery ───────────────── */
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+.proj-gallery-root {
   width: 100%;
-  max-width: 1000px;
-}
-
-.project-card {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  padding: 28px;
-  transition: all 0.3s ease;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
-.project-card:hover {
-  border-color: var(--color-neon);
-  box-shadow: var(--shadow-neon);
-  transform: translateY(-2px);
+.proj-gallery-counter {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-left: 1.5rem;
+  letter-spacing: 0.12em;
+  vertical-align: middle;
 }
 
-.project-card__name {
+.proj-gallery-stage {
+  position: relative;
+  height: 440px;
+  perspective: 1400px;
+  perspective-origin: 50% 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.proj-gallery-fan {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card — uses CSS vars set inline for 3D position */
+.proj-card {
+  position: absolute;
+  width: 320px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity   0.55s ease,
+    border-color 0.3s ease,
+    box-shadow   0.3s ease;
+  transform:
+    translateX(var(--card-tx))
+    translateZ(var(--card-tz))
+    rotateY(var(--card-ry))
+    scale(var(--card-scale));
+  opacity: var(--card-opacity);
+  will-change: transform, opacity;
+}
+
+.proj-card--active {
+  border-color: var(--card-accent);
+  box-shadow: 0 0 50px color-mix(in srgb, var(--card-accent) 22%, transparent),
+              0 0 0 1px color-mix(in srgb, var(--card-accent) 15%, transparent);
+  cursor: default;
+}
+
+/* Visual header */
+.proj-card__visual {
+  height: 130px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px 16px;
+  flex-shrink: 0;
+}
+
+.proj-card__visual-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(61, 220, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61, 220, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.proj-card__visual-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+}
+
+.proj-card__visual-label {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-crt);
+  font-size: 1.3rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 18px currentColor;
+  opacity: 0.7;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.proj-card__badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.15em;
+  color: var(--color-amber);
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  padding: 2px 7px;
+  background: rgba(255, 184, 0, 0.06);
+}
+
+/* Card body */
+.proj-card__body {
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.proj-card__name {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
 }
 
-.project-card__desc {
-  font-size: 0.85rem;
+.proj-card__desc {
+  font-size: 0.76rem;
   line-height: 1.6;
   color: var(--color-text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.project-card__tech {
+.proj-card__tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: auto;
+  gap: 4px;
+  margin-top: 2px;
 }
 
-.project-card__tech-tag {
-  padding: 2px 8px;
+.proj-card__tech-tag {
+  padding: 2px 7px;
   border: 1px solid var(--color-border);
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.57rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.proj-card__links {
+  display: flex;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.proj-card__link {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--card-accent, var(--color-neon));
+  transition: opacity 0.2s ease;
+}
+
+.proj-card__link:hover { opacity: 0.65; }
+
+.proj-card__link--muted {
   color: var(--color-text-muted);
 }
 
-.project-card__link {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--color-neon);
-  margin-top: 8px;
-  display: inline-flex;
+/* Arrows */
+.proj-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-65%);
+  z-index: 20;
+  width: 36px;
+  height: 36px;
+  display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-neon);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.proj-arrow:hover {
+  border-color: var(--color-neon);
+  background: rgba(61, 220, 255, 0.07);
+  box-shadow: var(--shadow-neon);
+}
+
+.proj-arrow:disabled { opacity: 0.18; pointer-events: none; }
+.proj-arrow--left  { left:  0; }
+.proj-arrow--right { right: 0; }
+
+/* Dots */
+.proj-dots {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 20;
+}
+
+.proj-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--color-text-muted);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.proj-dot--active {
+  background: var(--color-neon);
+  border-color: var(--color-neon);
+  box-shadow: 0 0 6px var(--color-neon);
+}
+
+@media (max-width: 768px) {
+  .proj-gallery-stage { height: 500px; perspective: 900px; }
+  .proj-card { width: 270px; }
+  .proj-gallery-fan { height: 430px; }
 }
 
 /* ─── Contact Room ───────────────────────────────────────── */
