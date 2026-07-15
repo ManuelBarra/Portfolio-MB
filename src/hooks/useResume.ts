@@ -10,9 +10,15 @@ export function useResume() {
     const draft = localStorage.getItem('resume_draft')
     if (draft) {
       try {
-        setResume(JSON.parse(draft))
-        setLoading(false)
-        return
+        const parsed = JSON.parse(draft)
+        // Guard against a draft saved before the i18n migration, where
+        // personal.title etc. used to be plain strings instead of {es, en}.
+        if (parsed?.personal && typeof parsed.personal.title === 'object') {
+          setResume(parsed)
+          setLoading(false)
+          return
+        }
+        localStorage.removeItem('resume_draft')
       } catch {
         localStorage.removeItem('resume_draft')
       }
