@@ -30,6 +30,16 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
               key={exp.id}
               className={`exp-item ${i === activeIdx ? 'exp-item--active' : ''}`}
               onClick={() => setActiveIdx(i)}
+              role="button"
+              tabIndex={0}
+              aria-label={`${exp.company} — ${exp.position}`}
+              aria-current={i === activeIdx ? 'true' : undefined}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  setActiveIdx(i)
+                }
+              }}
             >
               <div className="exp-item__date">
                 {formatDate(exp.startDate, false)} — {formatDate(exp.endDate, exp.current)}

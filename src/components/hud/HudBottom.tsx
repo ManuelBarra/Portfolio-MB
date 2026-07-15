@@ -17,6 +17,7 @@ export function HudBottom({ activeIdx, onNavigate }: HudBottomProps) {
             className={`minimap__dot ${i === activeIdx ? 'minimap__dot--active' : ''}`}
             onClick={() => onNavigate(i)}
             aria-label={`Go to ${label}`}
+            aria-current={i === activeIdx ? 'true' : undefined}
             title={label}
           />
         ))}

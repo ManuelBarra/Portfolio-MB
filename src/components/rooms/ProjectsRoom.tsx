@@ -1,7 +1,9 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import type { ResumeProject } from '@/types/resume'
+
+const SWIPE_THRESHOLD = 70
 
 interface ProjectsRoomProps {
   projects: ResumeProject[]
@@ -49,16 +51,68 @@ export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
     return () => window.removeEventListener('keydown', onKey, true)
   }, [prev, next])
 
+  const stageRef = useRef<HTMLDivElement>(null)
+  const dragStartX = useRef<number | null>(null)
+
+  // Native touch listeners just to stop the page-level room-swipe (page.tsx)
+  // from also firing while dragging inside the gallery — stopPropagation on
+  // React's synthetic PointerEvent doesn't stop the paired native TouchEvent.
+  useEffect(() => {
+    const el = stageRef.current
+    if (!el) return
+    const stop = (e: TouchEvent) => e.stopPropagation()
+    el.addEventListener('touchstart', stop)
+    el.addEventListener('touchend', stop)
+    return () => {
+      el.removeEventListener('touchstart', stop)
+      el.removeEventListener('touchend', stop)
+    }
+  }, [])
+
+  const handlePointerDown = useCallback((e: React.PointerEvent) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return
+    dragStartX.current = e.clientX
+  }, [])
+
+  const handlePointerUp = useCallback((e: React.PointerEvent) => {
+    if (dragStartX.current === null) return
+    const delta = e.clientX - dragStartX.current
+    dragStartX.current = null
+
+    if (Math.abs(delta) > SWIPE_THRESHOLD) {
+      if (delta < 0) next()
+      else prev()
+      return
+    }
+
+    // Not a swipe — treat as a tap/click on whichever card was hit.
+    const target = (e.target as HTMLElement).closest<HTMLElement>('[data-project-index]')
+    if (target) {
+      const idx = Number(target.dataset.projectIndex)
+      if (!Number.isNaN(idx) && idx !== active) setActive(idx)
+    }
+  }, [active, next, prev])
+
+  const handlePointerCancel = useCallback(() => {
+    dragStartX.current = null
+  }, [])
+
   return (
     <div className="proj-gallery-root">
       <h2 className="section-title">
         <span className="section-title__accent">//</span> Projects
-        <span className="proj-gallery-counter">
+        <span className="proj-gallery-counter" aria-live="polite" aria-atomic="true">
           {String(active + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
         </span>
       </h2>
 
-      <div className="proj-gallery-stage">
+      <div
+        className="proj-gallery-stage"
+        ref={stageRef}
+        onPointerDown={handlePointerDown}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerCancel}
+      >
         <div className="proj-gallery-fan">
           {projects.map((project, i) => {
             const offset   = i - active
@@ -66,11 +120,32 @@ export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
             if (abs > 2) return null
 
             const accent = accentFor(project.technologies)
+            const isActive = i === active
+
+            // Only non-active ("peek") cards get button semantics — their one
+            // action is "bring this into focus". The active card has no such
+            // action, so it stays a plain container and its real <a> links
+            // are natural, un-nested tab stops. This avoids putting focusable
+            // links inside a role="button" ancestor (invalid ARIA nesting).
+            const cardInteractiveProps = !isActive
+              ? {
+                  role: 'button' as const,
+                  tabIndex: 0,
+                  'aria-label': project.name,
+                  onKeyDown: (e: React.KeyboardEvent) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setActive(i)
+                    }
+                  },
+                }
+              : {}
 
             return (
               <div
                 key={project.id}
-                className={`proj-card${i === active ? ' proj-card--active' : ''}`}
+                data-project-index={i}
+                className={`proj-card${isActive ? ' proj-card--active' : ''}`}
                 style={{
                   '--card-accent':  accent,
                   '--card-tx':      `${offset * 290}px`,
@@ -80,7 +155,7 @@ export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
                   '--card-opacity': `${1 - abs * 0.32}`,
                   zIndex: 10 - abs,
                 } as React.CSSProperties}
-                onClick={() => i !== active && setActive(i)}
+                {...cardInteractiveProps}
               >
                 {/* Visual header */}
                 <div
@@ -89,7 +164,7 @@ export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
                 >
                   <div className="proj-card__visual-grid" />
                   {project.image
-                    ? <img src={project.image} alt={project.name} className="proj-card__visual-img" />
+                    ? <img src={project.image} alt={isActive ? project.name : ''} className="proj-card__visual-img" />
                     : (
                       <span className="proj-card__visual-label" style={{ color: accent }}>
                         {project.name}
@@ -106,20 +181,28 @@ export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
                   <div className="proj-card__name">{project.name}</div>
                   <p className="proj-card__desc">{project.description}</p>
                   <div className="proj-card__tech">
-                    {project.technologies.slice(0, 4).map(t => (
-                      <span key={t} className="proj-card__tech-tag">{t}</span>
+                    {project.technologies.slice(0, 4).map(tech => (
+                      <span key={tech} className="proj-card__tech-tag">{tech}</span>
                     ))}
                   </div>
                   <div className="proj-card__links">
                     {project.url && (
-                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="proj-card__link">
-                        Visit site →
-                      </a>
+                      isActive ? (
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="proj-card__link">
+                          Visit site →
+                        </a>
+                      ) : (
+                        <span className="proj-card__link" aria-hidden="true">Visit site →</span>
+                      )
                     )}
                     {project.repo && (
-                      <a href={`https://${project.repo}`} target="_blank" rel="noopener noreferrer" className="proj-card__link proj-card__link--muted">
-                        GitHub →
-                      </a>
+                      isActive ? (
+                        <a href={`https://${project.repo}`} target="_blank" rel="noopener noreferrer" className="proj-card__link proj-card__link--muted">
+                          GitHub →
+                        </a>
+                      ) : (
+                        <span className="proj-card__link proj-card__link--muted" aria-hidden="true">GitHub →</span>
+                      )
                     )}
                   </div>
                 </div>
@@ -129,16 +212,28 @@ export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
         </div>
 
         {/* Arrows */}
-        <button className="proj-arrow proj-arrow--left"  onClick={prev} disabled={active === 0}>‹</button>
-        <button className="proj-arrow proj-arrow--right" onClick={next} disabled={active === projects.length - 1}>›</button>
+        <button
+          className="proj-arrow proj-arrow--left"
+          onClick={prev}
+          disabled={active === 0}
+          aria-label="Previous project"
+        >‹</button>
+        <button
+          className="proj-arrow proj-arrow--right"
+          onClick={next}
+          disabled={active === projects.length - 1}
+          aria-label="Next project"
+        >›</button>
 
         {/* Dots */}
         <div className="proj-dots">
-          {projects.map((_, i) => (
+          {projects.map((project, i) => (
             <button
               key={i}
               className={`proj-dot${i === active ? ' proj-dot--active' : ''}`}
               onClick={() => setActive(i)}
+              aria-label={`Go to project ${i + 1}: ${project.name}`}
+              aria-current={i === active ? 'true' : undefined}
             />
           ))}
         </div>

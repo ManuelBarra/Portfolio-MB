@@ -1,0 +1,17 @@
+import type { MetadataRoute } from 'next'
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: 'Manuel Barra Lazo — Frontend Developer & IA Lead',
+    short_name: 'MANU.OS',
+    description: 'Portfolio de Manuel Barra Lazo. Frontend moderno, animaciones y experiencias web únicas.',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#03060d',
+    theme_color: '#3DDCFF',
+    icons: [
+      { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+  }
+}

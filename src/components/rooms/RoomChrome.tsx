@@ -8,7 +8,7 @@ interface RoomChromeProps {
 
 export function RoomChrome({ tag, number, children }: RoomChromeProps) {
   return (
-    <div className="room">
+    <section className="room" aria-label={`${tag} room`}>
       <div className="room-grid" />
       <div className="room-floor" />
       <div className="room-corner room-corner--tl" />
@@ -20,6 +20,6 @@ export function RoomChrome({ tag, number, children }: RoomChromeProps) {
       <div className="room-content">
         {children}
       </div>
-    </div>
+    </section>
   )
 }

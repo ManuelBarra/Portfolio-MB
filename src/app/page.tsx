@@ -132,7 +132,7 @@ export default function Home() {
       )}
 
       {/* World */}
-      <div className="world-viewport">
+      <main className="world-viewport">
         <div
           className="world"
           style={{ transform: `translate3d(-${activeIdx * 100}vw, 0, 0)` }}
@@ -173,7 +173,7 @@ export default function Home() {
             <ContactRoom personal={resume.personal} />
           </RoomChrome>
         </div>
-      </div>
+      </main>
     </div>
   )
 }

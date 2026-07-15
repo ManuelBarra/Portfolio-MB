@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 
 const COLS = 40
 const ROWS = 25
@@ -12,6 +13,7 @@ export function HeroMesh() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const mouse = useRef({ x: 0.5, y: 0.5 })
   const time = useRef(0)
+  const prefersReducedMotion = usePrefersReducedMotion()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -43,7 +45,7 @@ export function HeroMesh() {
 
     function draw() {
       if (!ctx) return
-      time.current += 0.008
+      if (!prefersReducedMotion) time.current += 0.008
 
       ctx.clearRect(0, 0, w, h)
 
@@ -132,7 +134,7 @@ export function HeroMesh() {
         }
       }
 
-      rafId = requestAnimationFrame(draw)
+      if (!prefersReducedMotion) rafId = requestAnimationFrame(draw)
     }
 
     function onMouseMove(e: MouseEvent) {
@@ -140,6 +142,9 @@ export function HeroMesh() {
       const rect = canvas.getBoundingClientRect()
       mouse.current.x = (e.clientX - rect.left) / rect.width
       mouse.current.y = (e.clientY - rect.top) / rect.height
+      // With reduced motion the RAF loop doesn't run, so redraw once per move
+      // to stay responsive to the cursor without a continuous animation loop.
+      if (prefersReducedMotion) draw()
     }
 
     resize()
@@ -152,13 +157,14 @@ export function HeroMesh() {
       window.removeEventListener('resize', resize)
       canvas.removeEventListener('mousemove', onMouseMove)
     }
-  }, [])
+  }, [prefersReducedMotion])
 
   return (
     <canvas
       ref={canvasRef}
       className="hero-mesh-container"
       style={{ width: '100%', height: '100%' }}
+      aria-hidden="true"
     />
   )
 }
