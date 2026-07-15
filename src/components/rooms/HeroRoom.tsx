@@ -1,12 +1,15 @@
 'use client'
 
 import type { ResumePersonal } from '@/types/resume'
+import { useLocale, t } from '@/hooks/useLocale'
 
 interface HeroRoomProps {
   personal: ResumePersonal
 }
 
 export function HeroRoom({ personal }: HeroRoomProps) {
+  const { locale } = useLocale()
+
   return (
     <div className="hero-room">
       <div className="hero-info">
@@ -21,7 +24,7 @@ export function HeroRoom({ personal }: HeroRoomProps) {
         <div className="hero-meta">
           <div className="hero-meta__row">
             <span className="hero-meta__label">role</span>
-            <span className="hero-meta__value">{personal.title}</span>
+            <span className="hero-meta__value">{t(personal.title, locale)}</span>
           </div>
           <div className="hero-meta__row">
             <span className="hero-meta__label">location</span>
@@ -38,7 +41,7 @@ export function HeroRoom({ personal }: HeroRoomProps) {
         {personal.status && (
           <div className="hero-status">
             <span className="hero-status__dot" />
-            {personal.status}
+            {t(personal.status, locale)}
           </div>
         )}
 
@@ -59,7 +62,7 @@ export function HeroRoom({ personal }: HeroRoomProps) {
             lineHeight: 1.7,
             maxWidth: '400px',
           }}>
-            {personal.tagline}
+            {t(personal.tagline, locale)}
           </p>
         )}
       </div>

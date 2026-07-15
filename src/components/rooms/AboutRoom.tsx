@@ -1,12 +1,14 @@
 'use client'
 
 import type { ResumePersonal } from '@/types/resume'
+import { useLocale, t } from '@/hooks/useLocale'
 
 interface AboutRoomProps {
   personal: ResumePersonal
 }
 
 export function AboutRoom({ personal }: AboutRoomProps) {
+  const { locale } = useLocale()
   const paragraphs = personal.about ?? [personal.bio]
 
   return (
@@ -26,7 +28,7 @@ export function AboutRoom({ personal }: AboutRoomProps) {
         <div className="about-avatar-card__name">
           {personal.firstName} {personal.lastName}
         </div>
-        <div className="about-avatar-card__title">{personal.title}</div>
+        <div className="about-avatar-card__title">{t(personal.title, locale)}</div>
         {personal.links.github && (
           <a
             href={`https://${personal.links.github}`}
@@ -42,7 +44,7 @@ export function AboutRoom({ personal }: AboutRoomProps) {
       <div className="about-bio">
         <span className="about-bio__label">// about.md</span>
         {paragraphs.map((text, i) => (
-          <p key={i} className="about-bio__text">{text}</p>
+          <p key={i} className="about-bio__text">{t(text, locale)}</p>
         ))}
       </div>
     </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useLocale } from '@/hooks/useLocale'
 
 const ROOM_LABELS = ['Home', 'About', 'Experience', 'Education', 'Skills', 'Projects', 'Contact']
 
@@ -10,6 +11,7 @@ interface HudTopProps {
 
 export function HudTop({ activeIdx }: HudTopProps) {
   const [time, setTime] = useState('')
+  const { locale, toggleLocale } = useLocale()
 
   useEffect(() => {
     function tick() {
@@ -34,6 +36,25 @@ export function HudTop({ activeIdx }: HudTopProps) {
       </div>
 
       <div className="hud-top__right">
+        <button
+          className="hud-top__lang"
+          onClick={toggleLocale}
+          aria-label="Toggle language"
+          title="ES / EN"
+          style={{
+            background: 'transparent',
+            border: '1px solid rgba(255,255,255,0.2)',
+            borderRadius: '4px',
+            padding: '0.15rem 0.5rem',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.75rem',
+            cursor: 'pointer',
+            color: 'inherit',
+            letterSpacing: '0.05em',
+          }}
+        >
+          {locale.toUpperCase()}
+        </button>
         <span>{time}</span>
         <span>v3.0</span>
       </div>

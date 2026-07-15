@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import type { ResumeExperience } from '@/types/resume'
+import { useLocale, t } from '@/hooks/useLocale'
 
 interface ExperienceRoomProps {
   experience: ResumeExperience[]
@@ -17,6 +18,7 @@ function formatDate(date: string | null, current: boolean): string {
 export function ExperienceRoom({ experience }: ExperienceRoomProps) {
   const [activeIdx, setActiveIdx] = useState(0)
   const active = experience[activeIdx]
+  const { locale } = useLocale()
 
   return (
     <>
@@ -32,7 +34,7 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
               onClick={() => setActiveIdx(i)}
               role="button"
               tabIndex={0}
-              aria-label={`${exp.company} — ${exp.position}`}
+              aria-label={`${exp.company} — ${t(exp.position, locale)}`}
               aria-current={i === activeIdx ? 'true' : undefined}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -45,7 +47,7 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
                 {formatDate(exp.startDate, false)} — {formatDate(exp.endDate, exp.current)}
               </div>
               <div className="exp-item__company">{exp.company}</div>
-              <div className="exp-item__role">{exp.position}</div>
+              <div className="exp-item__role">{t(exp.position, locale)}</div>
             </div>
           ))}
         </div>
@@ -53,7 +55,7 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
         <div className="exp-detail">
           <div className="exp-detail__header">
             <div className="exp-detail__company">{active.company}</div>
-            <div className="exp-detail__role">{active.position}</div>
+            <div className="exp-detail__role">{t(active.position, locale)}</div>
             <div className="exp-detail__meta">
               <span>{active.location}</span>
               <span>
@@ -62,12 +64,12 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
             </div>
           </div>
 
-          <p className="exp-detail__desc">{active.description}</p>
+          <p className="exp-detail__desc">{t(active.description, locale)}</p>
 
           {active.highlights && active.highlights.length > 0 && (
             <ul className="exp-detail__highlights">
               {active.highlights.map((h, i) => (
-                <li key={i} className="exp-detail__highlight">{h}</li>
+                <li key={i} className="exp-detail__highlight">{t(h, locale)}</li>
               ))}
             </ul>
           )}

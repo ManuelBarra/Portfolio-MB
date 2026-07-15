@@ -1,6 +1,7 @@
 'use client'
 
 import type { ResumeEducation } from '@/types/resume'
+import { useLocale, t } from '@/hooks/useLocale'
 
 interface EducationRoomProps {
   education: ResumeEducation[]
@@ -14,6 +15,8 @@ function formatDate(date: string | null, current: boolean): string {
 }
 
 export function EducationRoom({ education }: EducationRoomProps) {
+  const { locale } = useLocale()
+
   return (
     <>
       <h2 className="section-title">
@@ -26,8 +29,8 @@ export function EducationRoom({ education }: EducationRoomProps) {
               {formatDate(edu.startDate, false)} — {formatDate(edu.endDate, edu.current)}
             </div>
             <div className="edu-card__institution">{edu.institution}</div>
-            <div className="edu-card__degree">{edu.degree}</div>
-            <div className="edu-card__field">{edu.field}</div>
+            <div className="edu-card__degree">{t(edu.degree, locale)}</div>
+            <div className="edu-card__field">{t(edu.field, locale)}</div>
             <div className="edu-card__location">{edu.location}</div>
           </div>
         ))}

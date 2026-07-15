@@ -1,3 +1,10 @@
+export type Locale = 'es' | 'en'
+
+export interface LocalizedText {
+  es: string
+  en: string
+}
+
 export interface ResumeMetadata {
   version: string
   lastUpdated: string
@@ -15,14 +22,14 @@ export interface ResumePersonal {
   firstName: string
   lastName: string
   alias?: string
-  title: string
-  tagline?: string
-  status?: string
+  title: LocalizedText
+  tagline?: LocalizedText
+  status?: LocalizedText
   location: string
   email: string
   phone?: string
-  bio: string
-  about?: string[]
+  bio: LocalizedText
+  about?: LocalizedText[]
   links: ResumeLinks
   avatar?: string
 }
@@ -30,14 +37,14 @@ export interface ResumePersonal {
 export interface ResumeExperience {
   id: string
   company: string
-  position: string
+  position: LocalizedText
   startDate: string
   endDate: string | null
   current: boolean
   location: string
-  description: string
+  description: LocalizedText
   technologies: string[]
-  highlights?: string[]
+  highlights?: LocalizedText[]
 }
 
 export interface ResumeSkill {
@@ -51,7 +58,7 @@ export interface ResumeSkill {
 export interface ResumeProject {
   id: string
   name: string
-  description: string
+  description: LocalizedText
   url?: string
   repo?: string
   technologies: string[]
@@ -62,13 +69,13 @@ export interface ResumeProject {
 export interface ResumeEducation {
   id: string
   institution: string
-  degree: string
-  field: string
+  degree: LocalizedText
+  field: LocalizedText
   startDate: string
   endDate: string | null
   current: boolean
   location: string
-  description?: string
+  description?: LocalizedText
 }
 
 export interface ResumeTheme {

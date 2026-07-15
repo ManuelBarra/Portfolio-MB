@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Space_Grotesk, Syne, JetBrains_Mono, VT323 } from 'next/font/google'
 import '@/styles/globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { LocaleProvider } from '@/hooks/useLocale'
 import { JsonLd } from '@/components/JsonLd'
 import { SITE_URL } from '@/lib/site'
 
@@ -73,7 +74,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <JsonLd />
         <ThemeProvider>
-          {children}
+          <LocaleProvider>
+            {children}
+          </LocaleProvider>
         </ThemeProvider>
       </body>
     </html>

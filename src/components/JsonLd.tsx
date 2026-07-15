@@ -19,7 +19,7 @@ export function JsonLd() {
       {
         '@type': 'Person',
         name: `${personal.firstName} ${personal.lastName}`,
-        jobTitle: personal.title,
+        jobTitle: personal.title.es,
         url: SITE_URL,
         email: personal.email,
         address: personal.location,

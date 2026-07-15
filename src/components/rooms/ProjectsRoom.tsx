@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import type { ResumeProject } from '@/types/resume'
+import { useLocale, t } from '@/hooks/useLocale'
 
 const SWIPE_THRESHOLD = 70
 
@@ -38,6 +39,7 @@ function gradientFor(techs: string[]): string {
 export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
   const projects = allProjects.filter(p => p.image)
   const [active, setActive] = useState(0)
+  const { locale } = useLocale()
 
   const prev = useCallback(() => setActive(i => Math.max(0, i - 1)), [])
   const next = useCallback(() => setActive(i => Math.min(projects.length - 1, i + 1)), [projects.length])
@@ -179,7 +181,7 @@ export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
                 {/* Content */}
                 <div className="proj-card__body">
                   <div className="proj-card__name">{project.name}</div>
-                  <p className="proj-card__desc">{project.description}</p>
+                  <p className="proj-card__desc">{t(project.description, locale)}</p>
                   <div className="proj-card__tech">
                     {project.technologies.slice(0, 4).map(tech => (
                       <span key={tech} className="proj-card__tech-tag">{tech}</span>

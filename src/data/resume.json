@@ -1,275 +1,489 @@
 {
   "metadata": {
-    "version": "3.1",
-    "lastUpdated": "2026-06-09",
-    "author": "Manuel Barra"
+    "version": "4.0",
+    "lastUpdated": "2026-07-15",
+    "author": "Manuel Barra Lazo"
   },
   "personal": {
     "firstName": "Manuel",
-    "lastName": "Barra",
-    "alias": "manu_dev",
-    "title": "Frontend Engineer & Creative Technologist",
-    "tagline": "I build interfaces that feel like experiences.",
-    "status": "Open to projects",
-    "location": "Barcelona, Spain",
+    "lastName": "Barra Lazo",
+    "title": {
+      "es": "Web Developer & IA Lead",
+      "en": "Web Developer & AI Lead"
+    },
+    "tagline": {
+      "es": "Construyo interfaces web modernas y lidero la adopción de IA en el equipo de desarrollo.",
+      "en": "I build modern web interfaces and lead AI adoption across the development team."
+    },
+    "location": "Barcelona",
     "avatar": "/avatar.png",
-    "email": "contacto@cebratica.com",
-    "phone": "+34 669425094",
-    "bio": "Frontend engineer with 6+ years building high-impact web products. I specialize in React, Next.js, and complex animations — turning design ideas into fast, memorable digital experiences. Co-founder of Cebratica, where I combine technical precision with strategic design thinking.",
+    "email": "manuelbarralazo@gmail.com",
+    "phone": "+34 634 008 260",
+    "bio": {
+      "es": "Web Developer con más de 5 años de experiencia construyendo interfaces funcionales y escalables en React.js, Vue.js y Next.js. Actualmente en Genomcore, donde lidero la migración del producto a una arquitectura moderna y la adopción de IA en el equipo.",
+      "en": "Web Developer with 5+ years of experience building functional, scalable interfaces in React.js, Vue.js and Next.js. Currently at Genomcore, where I lead the product's migration to a modern architecture and drive AI adoption across the team."
+    },
     "about": [
-      "Frontend engineer with 6+ years crafting high-impact web products. I specialize in React, Next.js, and complex web animations — the place where clean code meets visual craft.",
-      "Co-founder of Cebratica, a studio where I combine strategic design thinking with frontend engineering to build digital products that actually move people.",
-      "I care deeply about performance, accessibility, and that feeling when everything just works. I've shipped products for CaixaBank, Roca, Guia Repsol and startups across three continents."
+      {
+        "es": "Web Developer con más de 5 años de experiencia construyendo interfaces funcionales y escalables en React.js, Vue.js y Next.js, con proyectos que van desde el desarrollo end-to-end de plataformas digitales completas (portales con buscadores, dashboards y contenido dinámico) hasta el mantenimiento de sitios corporativos multi-país.",
+        "en": "Web Developer with 5+ years of experience building functional, scalable interfaces in React.js, Vue.js and Next.js, on projects ranging from end-to-end development of full digital platforms (portals with search engines, dashboards and dynamic content) to maintaining multi-country corporate sites."
+      },
+      {
+        "es": "Actualmente en Genomcore, donde lideré la migración del producto de WordPress a una arquitectura moderna en Next.js y React, y hoy impulso además la adopción de IA en el equipo, integrando skills de IA en el flujo de desarrollo y creando repositorios de skills para marketplace.",
+        "en": "Currently at Genomcore, where I led the product's migration from WordPress to a modern Next.js and React architecture, and where I now also drive AI adoption across the team — integrating AI skills into the development workflow and building skill repositories for a marketplace."
+      },
+      {
+        "es": "Combino esta doble vertiente —desarrollo frontend y liderazgo en IA— con experiencia trabajando en equipos multidisciplinares bajo metodologías ágiles, y colaborando estrechamente con equipos de diseño de producto.",
+        "en": "I combine this dual focus — frontend development and AI leadership — with experience working in multidisciplinary teams under agile methodologies, collaborating closely with product design teams."
+      }
     ],
     "links": {
-      "github": "github.com/ManuelBarra",
-      "linkedin": "linkedin.com/in/manuelbarra",
-      "website": "cebratica.com"
+      "linkedin": "linkedin.com/in/manuel-barra",
+      "website": "portfolio-mb-2026.vercel.app"
     }
   },
   "experience": [
     {
-      "id": "cebratica",
-      "company": "Cebratica",
-      "position": "Co-founder & Frontend Lead",
-      "startDate": "2024-01",
-      "endDate": null,
-      "current": true,
-      "location": "Barcelona",
-      "description": "Built and run a design-and-development studio from the ground up. I own the full frontend stack — from design system to deployment — while aligning technical decisions with brand strategy for each client.",
-      "technologies": ["React", "Next.js", "TypeScript", "Three.js", "GSAP", "Tailwind", "Framer Motion"],
-      "highlights": [
-        "Co-founded the studio and led all technical architecture decisions",
-        "Delivered high-end web projects for premium clients across Spain and LATAM",
-        "Developed a proprietary component system powering multiple client sites",
-        "Closed and managed accounts independently, from proposal to delivery"
-      ]
-    },
-    {
-      "id": "ia-lead",
-      "company": "Cebratica",
-      "position": "AI Implementation Lead",
-      "startDate": "2024-06",
-      "endDate": null,
-      "current": true,
-      "location": "Barcelona",
-      "description": "In charge of AI strategy and implementation across the team. I define how we integrate LLMs and automation into our workflows — from client delivery to internal tooling — and I train and guide the team on using AI effectively.",
-      "technologies": ["Python", "Claude API", "OpenAI API", "LangChain", "TypeScript", "n8n"],
-      "highlights": [
-        "Lead AI adoption for the full team — tools, workflows and training",
-        "Built automation pipelines that cut content production time by ~60%",
-        "Integrated LLM workflows into client delivery and project management processes",
-        "Prototyped AI-first internal tools used daily by the studio"
-      ]
-    },
-    {
-      "id": "vass-lead",
-      "company": "Vass / DigitalMakers",
-      "position": "Frontend Lead — CaixaBank International",
-      "startDate": "2023-06",
-      "endDate": "2024-12",
-      "current": false,
-      "location": "Barcelona",
-      "description": "Led frontend development for CaixaBank's international digital platforms across 6 European markets. Coordinated a distributed team, set code quality standards, and shipped features used by millions of banking customers.",
-      "technologies": ["JavaScript", "AEM", "SASS", "Figma", "Git", "Jira"],
-      "highlights": [
-        "Owned the frontend of CaixaBank platforms in Italy, France, Germany, Morocco, Poland and UK",
-        "Led Private Banking, Premier Banking and Wealth Management Luxembourg products",
-        "Established team-wide code review standards and component guidelines",
-        "Reduced production bug rate by 35% through systematic QA improvements"
-      ]
-    },
-    {
-      "id": "vass-dev",
-      "company": "Vass / DigitalMakers",
-      "position": "Frontend Developer",
-      "startDate": "2022-04",
-      "endDate": "2023-05",
-      "current": false,
-      "location": "Barcelona",
-      "description": "Built and maintained enterprise web platforms for top-tier clients including Roca Group, Guia Repsol, and AgroBank. Worked inside large-scale AEM environments with strict brand and performance requirements.",
-      "technologies": ["JavaScript", "jQuery", "SASS", "Bootstrap", "AEM", "Liferay", "Figma"],
-      "highlights": [
-        "Developed and maintained roca.com — a flagship site with 10M+ annual visits",
-        "Contributed to Guia Repsol's restaurant discovery platform",
-        "Implemented AgroBank's digital banking interface components",
-        "Built reusable AEM component library adopted across 4 enterprise projects"
-      ]
-    },
-    {
       "id": "genomcore",
       "company": "Genomcore",
-      "position": "Frontend Developer",
-      "startDate": "2021-06",
-      "endDate": "2022-03",
-      "current": false,
-      "location": "Barcelona (Remote)",
-      "description": "Led the full frontend rebuild of Genomcore's digital presence — a biotech company operating at the intersection of genomics and personalized medicine.",
-      "technologies": ["JavaScript", "Vue.js", "PHP", "jQuery", "WordPress", "SASS"],
+      "position": {
+        "es": "Web Developer & IA Lead",
+        "en": "Web Developer & AI Lead"
+      },
+      "startDate": "2025-01",
+      "endDate": null,
+      "current": true,
+      "location": "Barcelona",
+      "description": {
+        "es": "Lidero la migración del producto de WordPress a una arquitectura moderna en Next.js y React, e impulso la adopción de IA en el equipo de desarrollo.",
+        "en": "Leading the product's migration from WordPress to a modern Next.js and React architecture, and driving AI adoption across the development team."
+      },
+      "technologies": [
+        "Next.js",
+        "React.js",
+        "JavaScript",
+        "TypeScript"
+      ],
       "highlights": [
-        "Complete redesign and rebuild of genomcore.com and madeofgenes.com",
-        "Architected a reusable Vue.js component system for the marketing site",
-        "Improved Core Web Vitals scores from failing to green across all pages",
-        "Collaborated directly with science and marketing teams on content strategy"
+        {
+          "es": "Lideré la migración de la web corporativa de WordPress a Next.js y React.js",
+          "en": "Led the corporate website migration from WordPress to Next.js and React.js"
+        },
+        {
+          "es": "Desarrollé desde cero genomcore.com y madeofgenes.ai, plataforma de salud basada en IA con dashboards y contenido multi-idioma",
+          "en": "Built genomcore.com and madeofgenes.ai from scratch — an AI-based health platform with dashboards and multi-language content"
+        },
+        {
+          "es": "Integro skills de IA en el flujo de desarrollo y creo repositorios de skills para marketplace",
+          "en": "Integrate AI skills into the development workflow and build skill repositories for a marketplace"
+        }
+      ]
+    },
+    {
+      "id": "vass",
+      "company": "Vass · Digital Makers",
+      "position": {
+        "es": "Frontend Developer",
+        "en": "Frontend Developer"
+      },
+      "startDate": "2022-04",
+      "endDate": "2024-03",
+      "current": false,
+      "location": "Barcelona",
+      "description": {
+        "es": "Desarrollo y mantenimiento de plataformas web para clientes de gran escala como CaixaBank, Roca y Guía Repsol.",
+        "en": "Development and maintenance of web platforms for large-scale clients such as CaixaBank, Roca and Guía Repsol."
+      },
+      "technologies": [
+        "JavaScript",
+        "jQuery",
+        "SASS",
+        "Bootstrap",
+        "Adobe Experience Manager (AEM)",
+        "Liferay",
+        "Node.js",
+        "REST APIs"
+      ],
+      "highlights": [
+        {
+          "es": "Desarrollé end-to-end AgroBank Hub, portal digital completo para el sector agroalimentario de CaixaBank",
+          "en": "Built AgroBank Hub end-to-end, a complete digital portal for CaixaBank's agri-food sector"
+        },
+        {
+          "es": "Desarrollé y mantuve roca.es y las plataformas de CaixaBank Talks y sus portales internacionales (Italia, Francia, Alemania, Marruecos, Polonia, Reino Unido y Luxemburgo)",
+          "en": "Developed and maintained roca.es and the CaixaBank Talks platforms and its international portals (Italy, France, Germany, Morocco, Poland, UK and Luxembourg)"
+        },
+        {
+          "es": "Construí componentes dinámicos consumiendo APIs REST/JSON para contenido dinámico",
+          "en": "Built dynamic components consuming REST/JSON APIs for dynamic content"
+        },
+        {
+          "es": "Resolví incidencias técnicas y di soporte continuo en producción",
+          "en": "Resolved technical issues and provided continuous production support"
+        }
       ]
     },
     {
       "id": "inmotion",
       "company": "Inmotion Real Estate Media",
-      "position": "Frontend Developer",
-      "startDate": "2020-06",
-      "endDate": "2021-05",
+      "position": {
+        "es": "Frontend Developer",
+        "en": "Frontend Developer"
+      },
+      "startDate": "2021-08",
+      "endDate": "2022-03",
       "current": false,
-      "location": "Remote (North America)",
-      "description": "Built custom web solutions for real estate clients across the US and Canada, focused on high-conversion landing pages and multifamily property platforms.",
-      "technologies": ["JavaScript", "Vue.js", "PHP", "WordPress", "SASS"],
+      "location": "Barcelona",
+      "description": {
+        "es": "Desarrollo de sitios web para el sector inmobiliario de EE.UU. sobre WordPress con Vue.js.",
+        "en": "Web development for the US real estate sector on WordPress with Vue.js."
+      },
+      "technologies": [
+        "JavaScript",
+        "PHP",
+        "Vue.js",
+        "jQuery",
+        "Bootstrap",
+        "Foundation",
+        "SASS",
+        "WordPress"
+      ],
       "highlights": [
-        "Developed The Multi-Family Firm — a property platform for the US multifamily market",
-        "Built The Abbey Co — a luxury residential platform for a North American property group",
-        "Optimized landing pages for SEO in English-speaking markets",
-        "First fully remote, international client engagement"
+        {
+          "es": "Construí un buscador de propiedades interactivo con Vue.js: filtros combinables, ordenación dinámica y vistas de mapa, grid y lista",
+          "en": "Built an interactive property search with Vue.js: combinable filters, dynamic sorting and map/grid/list views"
+        },
+        {
+          "es": "Desarrollé The Abbey Company y The Multifamily Firm sobre WordPress con Custom Post Types a medida",
+          "en": "Developed The Abbey Company and The Multifamily Firm on WordPress with custom Custom Post Types"
+        },
+        {
+          "es": "Implementé formularios de generación de leads integrados con el backend en PHP",
+          "en": "Implemented lead-generation forms integrated with the PHP backend"
+        }
       ]
     },
     {
       "id": "vinsnus",
-      "company": "Clos del Portal & Vins Nus",
-      "position": "Frontend Developer & Web Manager",
-      "startDate": "2019-01",
-      "endDate": "2020-05",
-      "current": false,
-      "location": "Catalonia",
-      "description": "Managed the full digital presence for two artisan wine brands in Catalonia — design, development, e-commerce, hosting and security.",
-      "technologies": ["JavaScript", "WordPress", "jQuery", "PHP", "SASS", "WooCommerce"],
-      "highlights": [
-        "Designed and built brand websites with strong visual identity alignment",
-        "Set up and managed WooCommerce storefronts for wine sales",
-        "Handled hosting, backups and security independently",
-        "First client relationship where I owned end-to-end accountability"
-      ]
-    },
-    {
-      "id": "freelance",
-      "company": "Freelance",
-      "position": "Web Developer",
-      "startDate": "2018-01",
-      "endDate": "2019-01",
+      "company": "Clos del Portal / Vins Nus",
+      "position": {
+        "es": "Frontend Developer",
+        "en": "Frontend Developer"
+      },
+      "startDate": "2020-01",
+      "endDate": "2021-07",
       "current": false,
       "location": "Barcelona",
-      "description": "Started building real projects for local clients while learning the fundamentals of web development. The place where everything clicked.",
-      "technologies": ["HTML", "CSS", "JavaScript", "WordPress", "PHP"],
+      "description": {
+        "es": "Gestión completa de la presencia digital de una marca vinícola de referencia en Priorat y Montsant.",
+        "en": "Full management of the digital presence for a leading wine brand in Priorat and Montsant."
+      },
+      "technologies": [
+        "JavaScript",
+        "PHP",
+        "jQuery",
+        "Bootstrap",
+        "Foundation",
+        "SASS",
+        "WordPress"
+      ],
       "highlights": [
-        "Built first paid client websites from scratch",
-        "Learned to communicate technical constraints to non-technical stakeholders",
-        "Developed the discipline of shipping over perfecting"
+        {
+          "es": "Desarrollé y mantuve una red de 3 sitios interconectados sobre temas WordPress custom-coded, multi-idioma (EN/ES/CAT)",
+          "en": "Built and maintained a network of 3 interconnected sites on custom-coded WordPress themes, multi-language (EN/ES/CAT)"
+        },
+        {
+          "es": "Gestioné hosting, bases de datos, seguridad y optimización SEO",
+          "en": "Managed hosting, databases, security and SEO optimization"
+        },
+        {
+          "es": "Integré tienda online, newsletter y feed de Instagram",
+          "en": "Integrated an online store, newsletter and Instagram feed"
+        }
       ]
     }
   ],
   "skills": [
-    { "id": "js", "name": "JavaScript (ES6+)", "category": "Languages", "level": 5, "icon": "js" },
-    { "id": "ts", "name": "TypeScript", "category": "Languages", "level": 5, "icon": "ts" },
-    { "id": "html", "name": "HTML5 / Semantic", "category": "Languages", "level": 5, "icon": "html" },
-    { "id": "css-lang", "name": "CSS3 / SASS", "category": "Languages", "level": 5, "icon": "css" },
-    { "id": "php", "name": "PHP", "category": "Languages", "level": 3, "icon": "php" },
-    { "id": "python", "name": "Python", "category": "Languages", "level": 3, "icon": "py" },
-    { "id": "react", "name": "React", "category": "Frameworks", "level": 5, "icon": "react" },
-    { "id": "nextjs", "name": "Next.js", "category": "Frameworks", "level": 5, "icon": "next" },
-    { "id": "vue", "name": "Vue.js", "category": "Frameworks", "level": 4, "icon": "vue" },
-    { "id": "astro", "name": "Astro", "category": "Frameworks", "level": 3, "icon": "astro" },
-    { "id": "tailwind", "name": "Tailwind CSS", "category": "Styling", "level": 5, "icon": "tw" },
-    { "id": "sass", "name": "SASS / SCSS", "category": "Styling", "level": 5, "icon": "sass" },
-    { "id": "css-modern", "name": "Modern CSS", "category": "Styling", "level": 5, "icon": "css" },
-    { "id": "framer", "name": "Framer Motion", "category": "Styling", "level": 4, "icon": "fm" },
-    { "id": "threejs", "name": "Three.js / R3F", "category": "Creative", "level": 4, "icon": "3d" },
-    { "id": "gsap", "name": "GSAP", "category": "Creative", "level": 5, "icon": "gsap" },
-    { "id": "canvas", "name": "Canvas 2D API", "category": "Creative", "level": 4, "icon": "cvs" },
-    { "id": "webgl", "name": "WebGL / Shaders", "category": "Creative", "level": 3, "icon": "gl" },
-    { "id": "figma", "name": "Figma", "category": "Creative", "level": 4, "icon": "fig" },
-    { "id": "git", "name": "Git / GitHub", "category": "Tools", "level": 5, "icon": "git" },
-    { "id": "node", "name": "Node.js", "category": "Tools", "level": 4, "icon": "node" },
-    { "id": "vercel", "name": "Vercel / CI-CD", "category": "Tools", "level": 4, "icon": "vcl" },
-    { "id": "wordpress", "name": "WordPress / WP CLI", "category": "Tools", "level": 4, "icon": "wp" },
-    { "id": "ai-tools", "name": "Claude & GPT APIs", "category": "AI & Automation", "level": 5, "icon": "ai" },
-    { "id": "langchain", "name": "LangChain / LangGraph", "category": "AI & Automation", "level": 3, "icon": "lc" },
-    { "id": "prompt-eng", "name": "Prompt Engineering", "category": "AI & Automation", "level": 5, "icon": "pe" },
-    { "id": "automation", "name": "Automation Pipelines", "category": "AI & Automation", "level": 4, "icon": "auto" },
-    { "id": "n8n", "name": "n8n / Workflow Automation", "category": "AI & Automation", "level": 4, "icon": "n8n" }
+    {
+      "id": "js",
+      "name": "JavaScript (ES6+)",
+      "category": "Languages",
+      "level": 5,
+      "icon": "js"
+    },
+    {
+      "id": "ts",
+      "name": "TypeScript",
+      "category": "Languages",
+      "level": 4,
+      "icon": "ts"
+    },
+    {
+      "id": "html",
+      "name": "HTML5",
+      "category": "Languages",
+      "level": 5,
+      "icon": "html"
+    },
+    {
+      "id": "css",
+      "name": "CSS3",
+      "category": "Languages",
+      "level": 5,
+      "icon": "css"
+    },
+    {
+      "id": "php",
+      "name": "PHP",
+      "category": "Languages",
+      "level": 4,
+      "icon": "php"
+    },
+    {
+      "id": "react",
+      "name": "React.js",
+      "category": "Frameworks",
+      "level": 5,
+      "icon": "react"
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "category": "Frameworks",
+      "level": 5,
+      "icon": "next"
+    },
+    {
+      "id": "vue",
+      "name": "Vue.js",
+      "category": "Frameworks",
+      "level": 4,
+      "icon": "vue"
+    },
+    {
+      "id": "redux",
+      "name": "Redux",
+      "category": "Frameworks",
+      "level": 3,
+      "icon": "redux"
+    },
+    {
+      "id": "node",
+      "name": "Node.js",
+      "category": "Frameworks",
+      "level": 3,
+      "icon": "node"
+    },
+    {
+      "id": "sass",
+      "name": "SASS",
+      "category": "Styling",
+      "level": 5,
+      "icon": "sass"
+    },
+    {
+      "id": "bootstrap",
+      "name": "Bootstrap",
+      "category": "Styling",
+      "level": 4,
+      "icon": "bs"
+    },
+    {
+      "id": "flexbox",
+      "name": "Flexbox",
+      "category": "Styling",
+      "level": 5,
+      "icon": "flex"
+    },
+    {
+      "id": "wordpress",
+      "name": "WordPress (temas custom)",
+      "category": "CMS & Enterprise",
+      "level": 5,
+      "icon": "wp"
+    },
+    {
+      "id": "liferay",
+      "name": "Liferay",
+      "category": "CMS & Enterprise",
+      "level": 3,
+      "icon": "liferay"
+    },
+    {
+      "id": "aem",
+      "name": "Adobe Experience Manager (AEM)",
+      "category": "CMS & Enterprise",
+      "level": 4,
+      "icon": "aem"
+    },
+    {
+      "id": "git",
+      "name": "Git / GitHub",
+      "category": "Tools",
+      "level": 5,
+      "icon": "git"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "category": "Tools",
+      "level": 4,
+      "icon": "fig"
+    },
+    {
+      "id": "adobexd",
+      "name": "Adobe XD",
+      "category": "Tools",
+      "level": 3,
+      "icon": "xd"
+    },
+    {
+      "id": "restapis",
+      "name": "REST APIs",
+      "category": "Tools",
+      "level": 4,
+      "icon": "api"
+    },
+    {
+      "id": "seo",
+      "name": "SEO",
+      "category": "Tools",
+      "level": 3,
+      "icon": "seo"
+    },
+    {
+      "id": "aiskills",
+      "name": "AI Skills & Agent Tooling",
+      "category": "AI & Automation",
+      "level": 4,
+      "icon": "ai"
+    }
   ],
   "projects": [
     {
-      "id": "manu-os",
-      "name": "MANU.OS — This Portfolio",
-      "description": "A cyberpunk OS-themed interactive portfolio. Horizontal room navigation, reactive 3D mesh, HUD overlay, boot sequence and retro-futurist aesthetics — built from scratch with Next.js, Canvas 2D and GSAP.",
-      "url": "",
-      "repo": "github.com/ManuelBarra/manu-os",
-      "technologies": ["Next.js", "TypeScript", "Canvas 2D", "GSAP", "Tailwind CSS v4"],
+      "id": "agrobankhub",
+      "name": "AgroBank Hub",
+      "description": {
+        "es": "Portal digital completo para el sector agroalimentario de CaixaBank: actualidad con cotizaciones en tiempo real, tienda, ecosistema de innovación y comunidad.",
+        "en": "Complete digital portal for CaixaBank's agri-food sector: real-time market news, a store, an innovation ecosystem and a community section."
+      },
+      "url": "https://www.agrobankhub.es",
+      "repo": "",
+      "technologies": [
+        "JavaScript",
+        "AEM",
+        "Liferay",
+        "REST APIs"
+      ],
+      "featured": true,
+      "image": "/projects/agrobankhub.jpg"
+    },
+    {
+      "id": "genomcore-proj",
+      "name": "Genomcore Digital Presence",
+      "description": {
+        "es": "Migración completa del frontend de Genomcore, de WordPress a Next.js y React.js. Desarrollo de genomcore.com desde cero.",
+        "en": "Complete frontend migration for Genomcore, from WordPress to Next.js and React.js. Built genomcore.com from scratch."
+      },
+      "url": "https://genomcore.com",
+      "repo": "",
+      "image": "/projects/genomcore-proj.jpg",
+      "technologies": [
+        "Next.js",
+        "React.js",
+        "JavaScript",
+        "TypeScript"
+      ],
       "featured": true
     },
     {
-      "id": "cebratica",
-      "name": "Cebratica Studio",
-      "description": "The digital home of the studio I co-founded. A showcase of our work combining brand strategy with high-quality frontend engineering. Built for performance, tone and first impressions.",
-      "url": "https://cebratica.com",
+      "id": "madeofgenes",
+      "name": "Made of Genes",
+      "description": {
+        "es": "Plataforma de salud basada en IA que integra genómica, biomarcadores y datos de estilo de vida. Dashboards, contenido multi-idioma y tienda online, construida en Next.js.",
+        "en": "AI-powered health platform integrating genomics, biomarkers and lifestyle data. Dashboards, multi-language content and an online store, built in Next.js."
+      },
+      "url": "https://www.madeofgenes.ai",
       "repo": "",
-      "technologies": ["Next.js", "TypeScript", "GSAP", "Framer Motion", "Three.js"],
-      "featured": true
-    },
-    {
-      "id": "caixabank-international",
-      "name": "CaixaBank International Platforms",
-      "description": "Led frontend for CaixaBank's digital banking across 6 European markets. Built inside AEM with strict accessibility and performance requirements at scale — used by millions of banking customers.",
-      "url": "",
-      "repo": "",
-      "technologies": ["JavaScript", "AEM", "SASS", "Figma", "Git"],
+      "image": "/projects/madeofgenes.jpg",
+      "technologies": [
+        "Next.js",
+        "React.js",
+        "JavaScript",
+        "TypeScript"
+      ],
       "featured": true
     },
     {
       "id": "multifamily",
       "name": "The Multi-Family Firm",
-      "description": "A real estate platform for the US multifamily market. High-conversion property listings, fast load times and SEO-optimized for English-speaking audiences.",
+      "description": {
+        "es": "Plataforma inmobiliaria para el mercado multifamiliar de EE.UU., con listados de propiedades, formularios de valoración y captación de leads sobre WordPress.",
+        "en": "Real estate platform for the US multifamily market, with property listings, valuation requests and lead-capture forms on WordPress."
+      },
       "url": "https://multifamilyfirm.com",
       "repo": "",
       "image": "/projects/multifamily.jpg",
-      "technologies": ["JavaScript", "Vue.js", "PHP", "WordPress"],
-      "featured": true
+      "technologies": [
+        "JavaScript",
+        "Vue.js",
+        "PHP",
+        "WordPress"
+      ],
+      "featured": false
     },
     {
       "id": "theabbeyco",
-      "name": "The Abbey Co",
-      "description": "Luxury multifamily real estate platform for a North American property group. Built high-conversion listings and branded landing pages optimized for US residential markets.",
-      "url": "https://theabbeyco.com",
+      "name": "The Abbey Company",
+      "description": {
+        "es": "Plataforma inmobiliaria comercial con buscador interactivo de propiedades en Vue.js: filtros combinables, vistas de mapa, grid y lista.",
+        "en": "Commercial real estate platform with an interactive Vue.js property search: combinable filters, map/grid/list views."
+      },
+      "url": "https://www.theabbeyco.com",
       "repo": "",
       "image": "/projects/theabbeyco.jpg",
-      "technologies": ["JavaScript", "Vue.js", "PHP", "WordPress"],
+      "technologies": [
+        "JavaScript",
+        "Vue.js",
+        "PHP",
+        "WordPress"
+      ],
       "featured": false
     },
     {
       "id": "roca",
-      "name": "Roca Group Website",
-      "description": "Contributed to the development and maintenance of roca.com — the digital flagship of a global bathroom products leader with 10M+ annual visits.",
-      "url": "https://roca.com",
+      "name": "Roca.es",
+      "description": {
+        "es": "Desarrollo y mantenimiento del sitio español de Roca, marca global de baños presente en más de 170 países.",
+        "en": "Development and maintenance of Roca's Spanish site, a global bathroom brand present in 170+ countries."
+      },
+      "url": "https://www.roca.es",
       "repo": "",
       "image": "/projects/roca.jpg",
-      "technologies": ["JavaScript", "AEM", "SASS", "Bootstrap"],
+      "technologies": [
+        "JavaScript",
+        "AEM",
+        "SASS",
+        "Bootstrap"
+      ],
       "featured": false
     },
     {
-      "id": "genomcore-proj",
-      "name": "Genomcore Digital Presence",
-      "description": "Complete frontend rebuild for a Barcelona-based genomics company. Redesigned both genomcore.com and madeofgenes.com, improving Core Web Vitals from failing to green across all pages.",
-      "url": "https://genomcore.com",
+      "id": "closdelportal",
+      "name": "Clos del Portal / Vins Nus",
+      "description": {
+        "es": "Red de 3 sitios interconectados para una marca vinícola de referencia en Priorat y Montsant, sobre temas WordPress custom-coded y multi-idioma (EN/ES/CAT).",
+        "en": "Network of 3 interconnected sites for a leading wine brand in Priorat and Montsant, on custom-coded, multi-language (EN/ES/CAT) WordPress themes."
+      },
+      "url": "https://closdelportal.com",
       "repo": "",
-      "image": "/projects/genomcore-proj.jpg",
-      "technologies": ["Vue.js", "JavaScript", "PHP", "WordPress", "SASS"],
-      "featured": false
-    },
-    {
-      "id": "madeofgenes",
-      "name": "Made of Genes",
-      "description": "Consumer-facing platform for Genomcore's direct-to-individual genomics service. Built alongside genomcore.com — focused on translating complex science into a clear, trustworthy user experience.",
-      "url": "https://madeofgenes.com",
-      "repo": "",
-      "image": "/projects/madeofgenes.jpg",
-      "technologies": ["Vue.js", "JavaScript", "WordPress", "SASS"],
+      "image": "/projects/closdelportal.jpg",
+      "technologies": [
+        "JavaScript",
+        "PHP",
+        "WordPress",
+        "SASS"
+      ],
       "featured": false
     }
   ],
@@ -277,42 +491,34 @@
     {
       "id": "isdi",
       "institution": "ISDI Coders",
-      "degree": "Bootcamp Full Stack",
-      "field": "Full Stack Development (JavaScript)",
-      "startDate": "2021-07",
-      "endDate": "2021-09",
+      "degree": {
+        "es": "Bootcamp Full Stack",
+        "en": "Full Stack Bootcamp"
+      },
+      "field": {
+        "es": "Desarrollo Full Stack (JavaScript)",
+        "en": "Full Stack Development (JavaScript)"
+      },
+      "startDate": "2020-01",
+      "endDate": "2020-12",
       "current": false,
       "location": "Barcelona"
     },
     {
       "id": "escolaespai",
       "institution": "Escola Espai",
-      "degree": "Specialization",
-      "field": "Web Development & Frontend",
-      "startDate": "2019-09",
-      "endDate": "2020-06",
+      "degree": {
+        "es": "Curso de Maquetación Web",
+        "en": "Web Layout Course"
+      },
+      "field": {
+        "es": "HTML5, CSS3, JavaScript, Flexbox, CSS Grid",
+        "en": "HTML5, CSS3, JavaScript, Flexbox, CSS Grid"
+      },
+      "startDate": "2018-01",
+      "endDate": "2019-01",
       "current": false,
       "location": "Barcelona"
-    },
-    {
-      "id": "self-taught",
-      "institution": "Self-taught",
-      "degree": "Continuous Learning",
-      "field": "React, Three.js, TypeScript, AI Engineering",
-      "startDate": "2018-01",
-      "endDate": null,
-      "current": true,
-      "location": "Online"
-    },
-    {
-      "id": "ai-cert",
-      "institution": "Anthropic / OpenAI",
-      "degree": "Certifications",
-      "field": "AI Engineering & Prompt Design",
-      "startDate": "2024-01",
-      "endDate": null,
-      "current": true,
-      "location": "Online"
     }
   ],
   "theme": {
