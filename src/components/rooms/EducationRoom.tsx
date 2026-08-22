@@ -27,6 +27,7 @@ export function EducationRoom({ education }: EducationRoomProps) {
           <div key={edu.id} className="edu-card">
             <div className="edu-card__date">
               {formatDate(edu.startDate, false)} — {formatDate(edu.endDate, edu.current)}
+              {edu.status && <span className="edu-card__status">{t(edu.status, locale)}</span>}
             </div>
             <div className="edu-card__institution">{edu.institution}</div>
             <div className="edu-card__degree">{t(edu.degree, locale)}</div>

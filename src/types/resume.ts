@@ -32,6 +32,8 @@ export interface ResumePersonal {
   about?: LocalizedText[]
   links: ResumeLinks
   avatar?: string
+  languages?: { name: string; level: LocalizedText }[]
+  interests?: LocalizedText[]
 }
 
 export interface ResumeExperience {
@@ -78,6 +80,7 @@ export interface ResumeEducation {
   current: boolean
   location: string
   description?: LocalizedText
+  status?: LocalizedText
 }
 
 export interface ResumeTheme {

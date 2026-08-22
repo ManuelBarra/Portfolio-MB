@@ -46,6 +46,24 @@ export function AboutRoom({ personal }: AboutRoomProps) {
         {paragraphs.map((text, i) => (
           <p key={i} className="about-bio__text">{t(text, locale)}</p>
         ))}
+
+        {personal.languages && personal.languages.length > 0 && (
+          <div className="about-meta-row">
+            <span className="about-meta-row__label">Languages</span>
+            <span className="about-meta-row__value">
+              {personal.languages.map((l) => `${l.name} (${t(l.level, locale)})`).join(' · ')}
+            </span>
+          </div>
+        )}
+
+        {personal.interests && personal.interests.length > 0 && (
+          <div className="about-meta-row">
+            <span className="about-meta-row__label">Interests</span>
+            <span className="about-meta-row__value">
+              {personal.interests.map((i) => t(i, locale)).join(' · ')}
+            </span>
+          </div>
+        )}
       </div>
     </div>
   )

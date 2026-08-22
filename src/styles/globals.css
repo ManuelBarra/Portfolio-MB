@@ -702,6 +702,27 @@ a:hover {
   color: var(--color-text-secondary);
 }
 
+.about-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.about-meta-row__label {
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  min-width: 80px;
+}
+
+.about-meta-row__value {
+  color: var(--color-text-secondary);
+}
+
 /* ─── Experience Room ────────────────────────────────────── */
 
 .exp-room {
@@ -868,6 +889,14 @@ a:hover {
   color: var(--color-text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.edu-card__status {
+  margin-left: 8px;
+  color: var(--color-amber);
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  padding: 2px 7px;
+  background: rgba(255, 184, 0, 0.06);
 }
 
 .edu-card__institution {
