@@ -36,10 +36,10 @@ const vt323 = VT323({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Manuel Barra Lazo — Frontend Developer & IA Lead',
+  title: 'Manuel Barra Lazo — Frontend / Full-Stack Developer, Integración de IA en producción',
   description:
-    'Portfolio de Manuel Barra Lazo. JavaScript developer con 5+ años creando experiencias web interactivas. Especializado en Frontend moderno y liderazgo técnico en IA.',
-  keywords: ['Frontend Developer', 'React', 'Next.js', 'Three.js', 'JavaScript', 'TypeScript', 'Barcelona'],
+    'Portfolio de Manuel Barra Lazo. Frontend Developer con 5+ años de experiencia que lleva esa base a la integración real de IA en producto: HH4LIFE (agentes de IA con el SDK de Anthropic) y SADATA (consultora de BI e IA).',
+  keywords: ['Frontend Developer', 'AI Integration', 'React', 'Next.js', 'Three.js', 'Anthropic SDK', 'TypeScript', 'Barcelona'],
   authors: [{ name: 'Manuel Barra Lazo' }],
   creator: 'Manuel Barra Lazo',
   alternates: {
@@ -49,14 +49,14 @@ export const metadata: Metadata = {
     type: 'website',
     url: SITE_URL,
     locale: 'es_ES',
-    title: 'Manuel Barra Lazo — Frontend Developer & IA Lead',
-    description: 'Portfolio 3D interactivo. Frontend moderno, animaciones y experiencias web únicas.',
+    title: 'Manuel Barra Lazo — Frontend / Full-Stack Developer, Integración de IA en producción',
+    description: 'Portfolio 3D interactivo. Frontend moderno con integración real de IA en producto.',
     siteName: 'Manuel Barra Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Manuel Barra Lazo — Frontend Developer',
-    description: 'Portfolio 3D interactivo. Frontend moderno, animaciones y experiencias web únicas.',
+    title: 'Manuel Barra Lazo — Frontend / Full-Stack Developer',
+    description: 'Portfolio 3D interactivo. Frontend moderno con integración real de IA en producto.',
   },
   robots: {
     index: true,
