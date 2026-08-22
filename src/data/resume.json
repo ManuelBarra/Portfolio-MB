@@ -1,27 +1,27 @@
 {
   "metadata": {
-    "version": "4.0",
-    "lastUpdated": "2026-07-15",
+    "version": "5.0",
+    "lastUpdated": "2026-08-22",
     "author": "Manuel Barra Lazo"
   },
   "personal": {
     "firstName": "Manuel",
     "lastName": "Barra Lazo",
     "title": {
-      "es": "Web Developer & IA Lead",
-      "en": "Web Developer & AI Lead"
+      "es": "Frontend / Full-Stack Developer — Integración de IA en producción",
+      "en": "Frontend / Full-Stack Developer — Production AI Integration"
     },
     "tagline": {
-      "es": "Construyo interfaces web modernas y lidero la adopción de IA en el equipo de desarrollo.",
-      "en": "I build modern web interfaces and lead AI adoption across the development team."
+      "es": "5+ años como Frontend Developer, últimos 2 llevando esa base a producto con IA real.",
+      "en": "5+ years as a Frontend Developer, the last 2 taking that foundation into real production AI."
     },
     "location": "Barcelona",
     "avatar": "/avatar.png",
     "email": "manuelbarralazo@gmail.com",
     "phone": "+34 634 008 260",
     "bio": {
-      "es": "Web Developer con más de 5 años de experiencia construyendo interfaces funcionales y escalables en React.js, Vue.js y Next.js. Actualmente en Genomcore, donde lidero la migración del producto a una arquitectura moderna y la adopción de IA en el equipo.",
-      "en": "Web Developer with 5+ years of experience building functional, scalable interfaces in React.js, Vue.js and Next.js. Currently at Genomcore, where I lead the product's migration to a modern architecture and drive AI adoption across the team."
+      "es": "Desarrollador Frontend con más de 5 años de experiencia (React, Vue, Next.js) que en los últimos dos años ha llevado esa base hacia la integración real de IA en producto: construí un repositorio de IA que se convirtió en el marketplace interno de un equipo de marketing, y lidero HH4LIFE, una plataforma full-stack propia con agentes de IA sobre el SDK de Anthropic.",
+      "en": "Frontend Developer with 5+ years of experience (React, Vue, Next.js) who over the last two years has taken that foundation into real production AI integration: I built an AI skills repository that became a marketing team's internal marketplace, and I lead HH4LIFE, my own full-stack platform with AI agents built on the Anthropic SDK."
     },
     "about": [
       {
@@ -29,15 +29,16 @@
         "en": "Web Developer with 5+ years of experience building functional, scalable interfaces in React.js, Vue.js and Next.js, on projects ranging from end-to-end development of full digital platforms (portals with search engines, dashboards and dynamic content) to maintaining multi-country corporate sites."
       },
       {
-        "es": "Actualmente en Genomcore, donde lideré la migración del producto de WordPress a una arquitectura moderna en Next.js y React, y hoy impulso además la adopción de IA en el equipo, integrando skills de IA en el flujo de desarrollo y creando repositorios de skills para marketplace.",
-        "en": "Currently at Genomcore, where I led the product's migration from WordPress to a modern Next.js and React architecture, and where I now also drive AI adoption across the team — integrating AI skills into the development workflow and building skill repositories for a marketplace."
+        "es": "En los últimos dos años he llevado esa base hacia la integración real de IA en producto: en Genomcore lideré la migración del sitio corporativo de WordPress a Next.js y construí un repositorio de ~10 skills de IA sobre Gemini que se convirtió en el marketplace interno del equipo de marketing.",
+        "en": "Over the last two years I've taken that foundation into real production AI integration: at Genomcore I led the corporate site's migration from WordPress to Next.js and built a repository of ~10 AI skills on Gemini that became the marketing team's internal marketplace."
       },
       {
-        "es": "Combino esta doble vertiente —desarrollo frontend y liderazgo en IA— con experiencia trabajando en equipos multidisciplinares bajo metodologías ágiles, y colaborando estrechamente con equipos de diseño de producto.",
-        "en": "I combine this dual focus — frontend development and AI leadership — with experience working in multidisciplinary teams under agile methodologies, collaborating closely with product design teams."
+        "es": "En paralelo lidero HH4LIFE, una plataforma full-stack propia con agentes de IA construidos sobre el SDK de Anthropic, y cofundé SADATA, consultora de Business Intelligence e IA con proyectos en Chile, Ecuador, España, Reino Unido y EE. UU.",
+        "en": "In parallel I lead HH4LIFE, my own full-stack platform with AI agents built on the Anthropic SDK, and I co-founded SADATA, a Business Intelligence and AI consultancy with projects in Chile, Ecuador, Spain, the UK and the US."
       }
     ],
     "links": {
+      "github": "github.com/ManuelBarra",
       "linkedin": "linkedin.com/in/manuel-barra",
       "website": "portfolio-mb-2026.vercel.app"
     }
@@ -66,16 +67,46 @@
       ],
       "highlights": [
         {
-          "es": "Lideré la migración de la web corporativa de WordPress a Next.js y React.js",
-          "en": "Led the corporate website migration from WordPress to Next.js and React.js"
+          "es": "Construí las plantillas WordPress originales de la web corporativa y lideré su migración a Next.js y React.js, alcanzando Lighthouse 100%",
+          "en": "Built the corporate website's original WordPress templates and led their migration to Next.js and React.js, reaching a 100% Lighthouse score"
         },
         {
           "es": "Desarrollé desde cero genomcore.com y madeofgenes.ai, plataforma de salud basada en IA con dashboards y contenido multi-idioma",
           "en": "Built genomcore.com and madeofgenes.ai from scratch — an AI-based health platform with dashboards and multi-language content"
         },
         {
-          "es": "Integro skills de IA en el flujo de desarrollo y creo repositorios de skills para marketplace",
-          "en": "Integrate AI skills into the development workflow and build skill repositories for a marketplace"
+          "es": "Construí un repositorio de ~10 skills de IA sobre Gemini que se convirtió en el marketplace interno del equipo de marketing",
+          "en": "Built a repository of ~10 AI skills on Gemini that became the marketing team's internal marketplace"
+        }
+      ]
+    },
+    {
+      "id": "sadata",
+      "company": "SADATA",
+      "position": {
+        "es": "Co-fundador & Developer",
+        "en": "Co-founder & Developer"
+      },
+      "startDate": "2024-01",
+      "endDate": null,
+      "current": true,
+      "parallel": true,
+      "location": "Barcelona",
+      "description": {
+        "es": "Consultora de Business Intelligence, IA y desarrollo de software a medida, cofundada junto a un socio, en paralelo a mi puesto en Genomcore.",
+        "en": "Business Intelligence, AI and custom software development consultancy, co-founded with a partner, in parallel to my role at Genomcore."
+      },
+      "technologies": [
+        "Next.js",
+        "React.js",
+        "TypeScript",
+        "Business Intelligence",
+        "IA / LLMs"
+      ],
+      "highlights": [
+        {
+          "es": "Cofundé y desarrollo proyectos de BI e IA a medida para clientes en Chile, Ecuador, España, Reino Unido y EE. UU.",
+          "en": "Co-founded and build custom BI and AI projects for clients in Chile, Ecuador, Spain, the UK and the US"
         }
       ]
     },
@@ -165,40 +196,41 @@
     },
     {
       "id": "vinsnus",
-      "company": "Clos del Portal / Vins Nus",
+      "company": "Vins Nus / Clos del Portal / Alfredo Arribas",
       "position": {
         "es": "Frontend Developer",
         "en": "Frontend Developer"
       },
       "startDate": "2020-01",
-      "endDate": "2021-07",
-      "current": false,
+      "endDate": null,
+      "current": true,
+      "parallel": true,
       "location": "Barcelona",
       "description": {
-        "es": "Gestión completa de la presencia digital de una marca vinícola de referencia en Priorat y Montsant.",
-        "en": "Full management of the digital presence for a leading wine brand in Priorat and Montsant."
+        "es": "Gestión de la presencia digital de un grupo de marcas de vino en el Priorat, cliente activo en paralelo a mis otros puestos, actualmente en migración de las plantillas WordPress a Next.js.",
+        "en": "Digital presence management for a wine brand group in the Priorat, an active client in parallel to my other roles, currently migrating the WordPress templates to Next.js."
       },
       "technologies": [
+        "Next.js",
         "JavaScript",
         "PHP",
         "jQuery",
         "Bootstrap",
-        "Foundation",
         "SASS",
         "WordPress"
       ],
       "highlights": [
         {
-          "es": "Desarrollé y mantuve una red de 3 sitios interconectados sobre temas WordPress custom-coded, multi-idioma (EN/ES/CAT)",
-          "en": "Built and maintained a network of 3 interconnected sites on custom-coded WordPress themes, multi-language (EN/ES/CAT)"
+          "es": "Desarrollé y mantengo una red de 3 sitios interconectados (Vins Nus, Clos del Portal, Alfredo Arribas) sobre temas WordPress custom-coded, multi-idioma (EN/ES/CAT)",
+          "en": "Built and maintain a network of 3 interconnected sites (Vins Nus, Clos del Portal, Alfredo Arribas) on custom-coded WordPress themes, multi-language (EN/ES/CAT)"
+        },
+        {
+          "es": "Lidero la migración de las plantillas WordPress a Next.js, mismo patrón que en Genomcore",
+          "en": "Leading the migration of the WordPress templates to Next.js, the same pattern used at Genomcore"
         },
         {
           "es": "Gestioné hosting, bases de datos, seguridad y optimización SEO",
           "en": "Managed hosting, databases, security and SEO optimization"
-        },
-        {
-          "es": "Integré tienda online, newsletter y feed de Instagram",
-          "en": "Integrated an online store, newsletter and Instagram feed"
         }
       ]
     }
@@ -357,9 +389,94 @@
       "category": "AI & Automation",
       "level": 4,
       "icon": "ai"
+    },
+    {
+      "id": "claudecode",
+      "name": "Claude Code",
+      "category": "AI & Automation",
+      "level": 4,
+      "icon": "ai"
+    },
+    {
+      "id": "anthropicsdk",
+      "name": "SDK de Anthropic (agentes)",
+      "category": "AI & Automation",
+      "level": 4,
+      "icon": "ai"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "category": "AI & Automation",
+      "level": 4,
+      "icon": "ai"
+    },
+    {
+      "id": "openaiapi",
+      "name": "OpenAI API (formación DataCamp)",
+      "category": "AI & Automation",
+      "level": 2,
+      "icon": "ai"
+    },
+    {
+      "id": "langchain",
+      "name": "LangChain (formación DataCamp)",
+      "category": "AI & Automation",
+      "level": 2,
+      "icon": "ai"
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face (formación DataCamp)",
+      "category": "AI & Automation",
+      "level": 2,
+      "icon": "ai"
     }
   ],
   "projects": [
+    {
+      "id": "hh4life",
+      "name": "HH4LIFE — Hiphop Knowledge Hub",
+      "description": {
+        "es": "Academia digital inmersiva para la cultura Hip Hop, con currículo gamificado en 6 disciplinas (MCing, DJing, Breaking, Graffiti, Knowledge, Production), canvas 3D interactivo, analizador de barras, entrenador de freestyle, sistema de crews, y agentes de IA propios construidos con el SDK de Anthropic.",
+        "en": "Immersive digital academy for Hip Hop culture, with a gamified curriculum across 6 disciplines (MCing, DJing, Breaking, Graffiti, Knowledge, Production), an interactive 3D canvas, a bars analyzer, a freestyle trainer, a crew system, and custom AI agents built with the Anthropic SDK."
+      },
+      "status": {
+        "es": "En desarrollo activo",
+        "en": "In active development"
+      },
+      "url": "https://hiphop-knowledge-hub.vercel.app",
+      "repo": "github.com/ManuelBarra/hiphop-knowledge-hub",
+      "image": "/projects/hh4life.jpg",
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Stripe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "sadata",
+      "name": "SADATA",
+      "description": {
+        "es": "Consultora de Business Intelligence, IA y desarrollo de software a medida, cofundada junto a un socio. Proyectos en Chile, Ecuador, España, Reino Unido y EE. UU.",
+        "en": "Business Intelligence, AI and custom software development consultancy, co-founded with a partner. Projects in Chile, Ecuador, Spain, the UK and the US."
+      },
+      "url": "https://sadata.io",
+      "repo": "",
+      "image": "/projects/sadata.jpg",
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Business Intelligence",
+        "IA / LLMs"
+      ],
+      "featured": true
+    },
     {
       "id": "agrobankhub",
       "name": "AgroBank Hub",
@@ -470,15 +587,16 @@
     },
     {
       "id": "closdelportal",
-      "name": "Clos del Portal / Vins Nus",
+      "name": "Vins Nus / Clos del Portal / Alfredo Arribas",
       "description": {
-        "es": "Red de 3 sitios interconectados para una marca vinícola de referencia en Priorat y Montsant, sobre temas WordPress custom-coded y multi-idioma (EN/ES/CAT).",
-        "en": "Network of 3 interconnected sites for a leading wine brand in Priorat and Montsant, on custom-coded, multi-language (EN/ES/CAT) WordPress themes."
+        "es": "Red de 3 sitios interconectados para un grupo de marcas de vino en el Priorat, sobre temas WordPress custom-coded y multi-idioma (EN/ES/CAT), actualmente en migración a Next.js.",
+        "en": "Network of 3 interconnected sites for a wine brand group in the Priorat, on custom-coded, multi-language (EN/ES/CAT) WordPress themes, currently migrating to Next.js."
       },
       "url": "https://closdelportal.com",
       "repo": "",
       "image": "/projects/closdelportal.jpg",
       "technologies": [
+        "Next.js",
         "JavaScript",
         "PHP",
         "WordPress",

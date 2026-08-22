@@ -45,6 +45,7 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
             >
               <div className="exp-item__date">
                 {formatDate(exp.startDate, false)} — {formatDate(exp.endDate, exp.current)}
+                {exp.parallel && <span className="exp-item__parallel"> · en paralelo</span>}
               </div>
               <div className="exp-item__company">{exp.company}</div>
               <div className="exp-item__role">{t(exp.position, locale)}</div>
@@ -60,6 +61,7 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
               <span>{active.location}</span>
               <span>
                 {formatDate(active.startDate, false)} — {formatDate(active.endDate, active.current)}
+                {active.parallel && <span className="exp-item__parallel"> · en paralelo</span>}
               </span>
             </div>
           </div>

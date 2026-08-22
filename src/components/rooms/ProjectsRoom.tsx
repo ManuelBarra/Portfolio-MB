@@ -176,6 +176,11 @@ export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
                   {project.featured && (
                     <span className="proj-card__badge">FEATURED</span>
                   )}
+                  {project.status && (
+                    <span className="proj-card__badge proj-card__badge--status">
+                      {t(project.status, locale)}
+                    </span>
+                  )}
                 </div>
 
                 {/* Content */}
