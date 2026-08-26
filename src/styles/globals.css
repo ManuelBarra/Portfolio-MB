@@ -1447,7 +1447,7 @@ a:hover {
 
   .hero-room {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left;
   }
 
   .hero-name {
@@ -1541,6 +1541,7 @@ body.cv-route {
   overflow: auto;
   height: auto;
   cursor: auto;
+  background: #f4f1ea;
 }
 
 .cv-page {
@@ -1711,6 +1712,10 @@ body.cv-route {
 }
 
 @media print {
+  html, body {
+    background: #fff;
+  }
+
   .cv-toolbar { display: none; }
 
   .cv-page {
