@@ -8,29 +8,29 @@
     "firstName": "Manuel",
     "lastName": "Barra Lazo",
     "title": {
-      "es": "Frontend / Full-Stack Developer — Integración de IA en producción",
-      "en": "Frontend / Full-Stack Developer — Production AI Integration"
+      "es": "Desarrollador Web",
+      "en": "Web Developer"
     },
     "tagline": {
-      "es": "5+ años como Frontend Developer, últimos 2 llevando esa base a producto con IA real.",
-      "en": "5+ years as a Frontend Developer, the last 2 taking that foundation into real production AI."
+      "es": "5+ años de experiencia en desarrollo frontend que en los últimos 2 se convirtió en integración real de IA en producto.",
+      "en": "5+ years of frontend development experience that over the last 2 turned into real production AI integration."
     },
-    "location": "Sant Cugat del Vallès, Barcelona",
+    "location": "Barceloneta, Barcelona",
     "avatar": "/avatar.png",
     "email": "manuelbarralazo@gmail.com",
     "phone": "+34 634 008 260",
     "bio": {
-      "es": "Desarrollador Frontend con más de 5 años de experiencia (React.js, Vue.js, Next.js, PHP, Liferay, WordPress) que en los últimos dos años ha llevado esa base hacia la integración real de IA en producto: construí un repositorio de ~10 skills de IA sobre Gemini que se convirtió en el marketplace interno de un equipo de marketing de 7 personas, y usé Claude Code para liderar la migración completa de dos plataformas corporativas de WordPress a Next.js, alcanzando el 100% en Lighthouse. En paralelo desarrollo HH4LIFE, una plataforma full-stack propia con agentes de IA sobre el SDK de Anthropic, y colaboro como cofundador técnico de SADATA.",
-      "en": "Frontend Developer with 5+ years of experience (React.js, Vue.js, Next.js, PHP, Liferay, WordPress) who over the last two years has taken that foundation into real production AI integration: I built a repository of ~10 AI skills on Gemini that became a 7-person marketing team's internal marketplace, and used Claude Code to lead the full migration of two corporate platforms from WordPress to Next.js, reaching 100% on Lighthouse. In parallel I build HH4LIFE, my own full-stack platform with AI agents on the Anthropic SDK, and I'm a technical co-founder at SADATA."
+      "es": "Desarrollador Web con más de 5 años de experiencia en JavaScript y su ecosistema (React.js, Vue.js, Next.js, PHP, WordPress), que en los últimos dos años ha llevado esa base hacia la integración real de IA en producto: diseñé un marketplace interno de skills de IA sobre Gemini (seguridad, redacción, diseño, copyright) para el equipo de marketing de Genomcore, y usé Claude Code para liderar la migración de sus plataformas corporativas de WordPress a sitios 100% seguros, rápidos y testeados. En paralelo desarrollo HH4LIFE, una plataforma full-stack propia con agentes de IA sobre el SDK de Anthropic, y colaboro como cofundador técnico de SADATA.",
+      "en": "Web Developer with 5+ years of experience in JavaScript and its ecosystem (React.js, Vue.js, Next.js, PHP, WordPress), who over the last two years has taken that foundation into real production AI integration: designed an internal marketplace of Gemini-based AI skills (security, copywriting, design, copyright) for Genomcore's marketing team, and used Claude Code to lead the migration of its corporate platforms from WordPress to sites that are 100% secure, fast and tested. In parallel I build HH4LIFE, my own full-stack platform with AI agents on the Anthropic SDK, and I'm a technical co-founder at SADATA."
       },
     "about": [
       {
-        "es": "Web Developer con más de 5 años de experiencia construyendo interfaces funcionales y escalables en React.js, Vue.js y Next.js, con proyectos que van desde el desarrollo end-to-end de plataformas digitales completas (portales con buscadores, dashboards y contenido dinámico) hasta el mantenimiento de sitios corporativos multi-país.",
-        "en": "Web Developer with 5+ years of experience building functional, scalable interfaces in React.js, Vue.js and Next.js, on projects ranging from end-to-end development of full digital platforms (portals with search engines, dashboards and dynamic content) to maintaining multi-country corporate sites."
+        "es": "Desarrollador Web con más de 5 años de experiencia en JavaScript y su ecosistema de librerías y frameworks (React.js, Vue.js, Next.js), construyendo interfaces funcionales y escalables — desde el desarrollo end-to-end de plataformas digitales completas (portales con buscadores, dashboards y contenido dinámico) hasta el mantenimiento de sitios corporativos multi-país.",
+        "en": "Web Developer with 5+ years of experience in JavaScript and its ecosystem of libraries and frameworks (React.js, Vue.js, Next.js), building functional, scalable interfaces — from end-to-end development of full digital platforms (portals with search engines, dashboards and dynamic content) to maintaining multi-country corporate sites."
       },
       {
-        "es": "En los últimos dos años he llevado esa base hacia la integración real de IA en producto: en Genomcore construí un repositorio de ~10 skills de IA sobre Gemini que se convirtió en el marketplace interno del equipo de marketing (7 personas), y usé Claude Code como herramienta de desarrollo asistido para liderar la migración de las plataformas corporativas de WordPress a Next.js, alcanzando el 100% en Lighthouse.",
-        "en": "Over the last two years I've taken that foundation into real production AI integration: at Genomcore I built a repository of ~10 AI skills on Gemini that became the marketing team's (7 people) internal marketplace, and used Claude Code as an AI-assisted development tool to lead the corporate platforms' migration from WordPress to Next.js, reaching 100% on Lighthouse."
+        "es": "En los últimos dos años llevé esa base hacia la integración real de IA en producto: en Genomcore diseñé un marketplace interno de skills de IA sobre Gemini (seguridad, redacción, diseño, copyright, entre otras) para el equipo de marketing, y usé Claude Code para liderar la migración de las plataformas corporativas de WordPress a sitios 100% seguros, rápidos y testeados.",
+        "en": "Over the last two years I took that foundation into real production AI integration: at Genomcore I designed an internal marketplace of Gemini-based AI skills (security, copywriting, design, copyright, and more) for the marketing team, and used Claude Code to lead the migration of the corporate platforms from WordPress to sites that are 100% secure, fast and tested."
       },
       {
         "es": "En paralelo desarrollo HH4LIFE, una plataforma full-stack propia con agentes de IA construidos sobre el SDK de Anthropic, y colaboro como cofundador técnico de SADATA, consultora de Business Intelligence, IA y desarrollo de software a medida con proyectos en Chile, Ecuador, España, Reino Unido y EE. UU. Ahora ampliando esta base con formación específica en AI Engineering.",
@@ -44,7 +44,7 @@
     },
     "languages": [
       { "name": "Español", "level": { "es": "Nativo", "en": "Native" } },
-      { "name": "Inglés", "level": { "es": "Avanzado", "en": "Advanced" } }
+      { "name": "Inglés", "level": { "es": "Intermedio", "en": "Intermediate" } }
     ],
     "interests": [
       { "es": "Producción musical", "en": "Music production" },
@@ -89,8 +89,8 @@
           "en": "Used Claude Code as an AI-assisted development tool to speed up and structure the legacy code migration"
         },
         {
-          "es": "Diseñé y construí un repositorio interno de ~10 \"skills\" de IA sobre Gemini (copywriting y otras tareas diarias de contenido) para el equipo de marketing (7 personas), que se convirtió en su marketplace interno de herramientas de IA",
-          "en": "Designed and built an internal repository of ~10 Gemini-based AI \"skills\" (copywriting and other daily content tasks) for the marketing team (7 people), which became their internal AI tools marketplace"
+          "es": "Diseñé un marketplace interno de skills de IA sobre Gemini (seguridad, redacción, diseño, copyright, entre otras) para el equipo de marketing",
+          "en": "Designed an internal marketplace of Gemini-based AI skills (security, copywriting, design, copyright, and more) for the marketing team"
         }
       ]
     },
@@ -107,8 +107,8 @@
       "parallel": true,
       "location": "Reino Unido (remoto)",
       "description": {
-        "es": "Freelance, en paralelo a mi puesto en Genomcore. Plataforma de business development y outreach B2B.",
-        "en": "Freelance, in parallel to my role at Genomcore. B2B business development and outreach platform."
+        "es": "Freelance, en paralelo a mi puesto en Genomcore. Módulo de búsqueda y prospección de contactos para una plataforma de business development y outreach B2B.",
+        "en": "Freelance, in parallel to my role at Genomcore. Contact search and prospecting module for a B2B business development and outreach platform."
       },
       "technologies": [
         "MongoDB",
@@ -118,14 +118,19 @@
       ],
       "highlights": [
         {
-          "es": "Construí la interfaz de búsqueda y selección de contactos para una plataforma de business development y outreach B2B",
-          "en": "Built the contact search and selection interface for a B2B business development and outreach platform"
+          "es": "Construí la pantalla de búsqueda de prospectos: filtros estructurados por rol, ubicación y empresa sobre la base de datos de Wiza, con resultados paginados, ordenables y selección masiva",
+          "en": "Built the prospect search screen: structured filters by role, location and company over Wiza's database, with paginated, sortable results and bulk selection"
         },
         {
-          "es": "Integré la API de Wiza para enriquecimiento de datos y gestión de campañas de prospección",
-          "en": "Integrated the Wiza API for data enrichment and prospecting campaign management"
+          "es": "Integré la API de Wiza para enriquecer contactos en segundo plano (email, LinkedIn, empresa) sin bloquear la búsqueda, con contador de campaña en tiempo real y límite configurable de contactos",
+          "en": "Integrated the Wiza API to enrich contacts in the background (email, LinkedIn, company) without blocking search, with a real-time campaign counter and a configurable contact limit"
+        },
+        {
+          "es": "Implementé el flujo de consentimiento GDPR para el envío a emails personales, con aviso legal y confirmación explícita del usuario antes de activarlo",
+          "en": "Implemented the GDPR consent flow for personal email outreach, with a legal notice and explicit user confirmation before enabling it"
         }
-      ]
+      ],
+      "repo": "github.com/BRDKI/BDIc"
     },
     {
       "id": "sadata",
@@ -327,13 +332,6 @@
       "icon": "vue"
     },
     {
-      "id": "redux",
-      "name": "Redux",
-      "category": "Frontend",
-      "level": 3,
-      "icon": "redux"
-    },
-    {
       "id": "sass",
       "name": "SASS",
       "category": "Frontend",
@@ -341,25 +339,11 @@
       "icon": "sass"
     },
     {
-      "id": "bootstrap",
-      "name": "Bootstrap",
-      "category": "Frontend",
-      "level": 4,
-      "icon": "bs"
-    },
-    {
       "id": "tailwind",
       "name": "Tailwind",
       "category": "Frontend",
       "level": 4,
       "icon": "tw"
-    },
-    {
-      "id": "flexbox",
-      "name": "Flexbox",
-      "category": "Frontend",
-      "level": 5,
-      "icon": "flex"
     },
     {
       "id": "node",
@@ -383,6 +367,41 @@
       "icon": "mongo"
     },
     {
+      "id": "sql",
+      "name": "SQL (en aprendizaje)",
+      "category": "Backend & DevOps",
+      "level": 2,
+      "icon": "sql"
+    },
+    {
+      "id": "restapis",
+      "name": "REST APIs",
+      "category": "Backend & DevOps",
+      "level": 4,
+      "icon": "api"
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "category": "Backend & DevOps",
+      "level": 5,
+      "icon": "git"
+    },
+    {
+      "id": "docker",
+      "name": "Docker / Contenedores (en aprendizaje)",
+      "category": "Backend & DevOps",
+      "level": 1,
+      "icon": "docker"
+    },
+    {
+      "id": "testing",
+      "name": "Testing (en aprendizaje)",
+      "category": "Backend & DevOps",
+      "level": 1,
+      "icon": "test"
+    },
+    {
       "id": "php",
       "name": "PHP",
       "category": "Backend & DevOps",
@@ -397,13 +416,6 @@
       "icon": "wp"
     },
     {
-      "id": "git",
-      "name": "Git",
-      "category": "Backend & DevOps",
-      "level": 5,
-      "icon": "git"
-    },
-    {
       "id": "liferay",
       "name": "Liferay",
       "category": "Backend & DevOps",
@@ -416,13 +428,6 @@
       "category": "Backend & DevOps",
       "level": 4,
       "icon": "aem"
-    },
-    {
-      "id": "restapis",
-      "name": "REST APIs",
-      "category": "Backend & DevOps",
-      "level": 4,
-      "icon": "api"
     },
     {
       "id": "aiskills",
@@ -474,20 +479,6 @@
       "icon": "ai"
     },
     {
-      "id": "figma",
-      "name": "Figma",
-      "category": "Herramientas",
-      "level": 4,
-      "icon": "fig"
-    },
-    {
-      "id": "adobexd",
-      "name": "Adobe XD",
-      "category": "Herramientas",
-      "level": 3,
-      "icon": "xd"
-    },
-    {
       "id": "jira",
       "name": "Jira",
       "category": "Herramientas",
@@ -495,32 +486,11 @@
       "icon": "jira"
     },
     {
-      "id": "confluence",
-      "name": "Confluence",
-      "category": "Herramientas",
-      "level": 3,
-      "icon": "confluence"
-    },
-    {
-      "id": "trello",
-      "name": "Trello",
+      "id": "figma",
+      "name": "Figma",
       "category": "Herramientas",
       "level": 4,
-      "icon": "trello"
-    },
-    {
-      "id": "teams",
-      "name": "Microsoft Teams",
-      "category": "Herramientas",
-      "level": 4,
-      "icon": "teams"
-    },
-    {
-      "id": "seo",
-      "name": "SEO",
-      "category": "Herramientas",
-      "level": 3,
-      "icon": "seo"
+      "icon": "fig"
     }
   ],
   "projects": [
@@ -742,6 +712,10 @@
         "es": "Maquetación Web",
         "en": "Web Layout"
       },
+      "description": {
+        "es": "Formación en maquetación web profesional: HTML, CSS y estructura de interfaces — el punto de partida técnico de mi trayectoria como desarrollador.",
+        "en": "Professional web layout training: HTML, CSS and interface structure — the technical starting point of my career as a developer."
+      },
       "startDate": "2019-01",
       "endDate": "2021-01",
       "current": false,
@@ -757,6 +731,10 @@
       "field": {
         "es": "Desarrollo de aplicaciones web",
         "en": "Web application development"
+      },
+      "description": {
+        "es": "Formación intensiva en desarrollo frontend moderno: JavaScript, frameworks de componentes y control de versiones con Git, consolidando las bases para trabajar en producto real.",
+        "en": "Intensive training in modern frontend development: JavaScript, component-based frameworks and version control with Git, consolidating the foundation to work on real products."
       },
       "startDate": "2021-01",
       "endDate": "2021-12",
@@ -774,50 +752,14 @@
         "es": "Escuela de Oficios Vitoria · EDteam · University of California Davis",
         "en": "Escuela de Oficios Vitoria · EDteam · University of California Davis"
       },
+      "description": {
+        "es": "Formación complementaria en distintas instituciones, ampliando fundamentos técnicos y de desarrollo de software más allá del currículo base.",
+        "en": "Additional training across different institutions, broadening technical and software development fundamentals beyond the core curriculum."
+      },
       "startDate": "2018-01",
       "endDate": "2021-01",
       "current": false,
       "location": ""
-    },
-    {
-      "id": "datacamp-ai",
-      "institution": "DataCamp",
-      "degree": {
-        "es": "Associate AI Engineer for Developers",
-        "en": "Associate AI Engineer for Developers"
-      },
-      "field": {
-        "es": "AI Engineering",
-        "en": "AI Engineering"
-      },
-      "startDate": "2026-01",
-      "endDate": null,
-      "current": false,
-      "location": "Online",
-      "status": {
-        "es": "Formación planificada 2026",
-        "en": "Planned training 2026"
-      }
-    },
-    {
-      "id": "aws-ai",
-      "institution": "AWS",
-      "degree": {
-        "es": "AWS Certified AI Practitioner",
-        "en": "AWS Certified AI Practitioner"
-      },
-      "field": {
-        "es": "AI Engineering",
-        "en": "AI Engineering"
-      },
-      "startDate": "2026-01",
-      "endDate": null,
-      "current": false,
-      "location": "Online",
-      "status": {
-        "es": "Formación planificada 2026",
-        "en": "Planned training 2026"
-      }
     },
     {
       "id": "jscamp",

@@ -24,6 +24,7 @@ function EduCard({ edu, locale }: { edu: ResumeEducation; locale: 'es' | 'en' })
       <div className="edu-card__institution">{edu.institution}</div>
       <div className="edu-card__degree">{t(edu.degree, locale)}</div>
       <div className="edu-card__field">{t(edu.field, locale)}</div>
+      {edu.description && <p className="edu-card__desc">{t(edu.description, locale)}</p>}
       <div className="edu-card__location">{edu.location}</div>
     </div>
   )

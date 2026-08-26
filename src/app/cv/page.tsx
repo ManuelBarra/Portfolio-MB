@@ -144,6 +144,7 @@ export default async function CvPage(
                 </span>
               </div>
               <p className="cv-doc__text">{t(edu.field, locale)}</p>
+              {edu.description && <p className="cv-doc__text">{t(edu.description, locale)}</p>}
             </div>
           ))}
           {plannedEdu.length > 0 && (

@@ -886,6 +886,19 @@ a:hover {
   letter-spacing: 0.05em;
 }
 
+.exp-detail__link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-neon);
+  transition: opacity 0.2s ease;
+}
+
+.exp-detail__link:hover {
+  opacity: 0.65;
+}
+
 /* ─── Education Room ─────────────────────────────────────── */
 
 .edu-grid {
@@ -952,6 +965,8 @@ a:hover {
   border: 1px solid rgba(255, 184, 0, 0.35);
   padding: 2px 7px;
   background: rgba(255, 184, 0, 0.06);
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .edu-card__institution {
@@ -971,6 +986,13 @@ a:hover {
   font-size: 0.8rem;
   color: var(--color-text-secondary);
   margin-top: 4px;
+}
+
+.edu-card__desc {
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin-top: 8px;
 }
 
 .edu-card__location {

@@ -49,6 +49,7 @@ export interface ResumeExperience {
   description: LocalizedText
   technologies: string[]
   highlights?: LocalizedText[]
+  repo?: string
 }
 
 export interface ResumeSkill {

@@ -87,6 +87,17 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
               <span key={tech} className="exp-detail__tech-tag">{tech}</span>
             ))}
           </div>
+
+          {active.repo && (
+            <a
+              href={`https://${active.repo}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="exp-detail__link"
+            >
+              GitHub →
+            </a>
+          )}
         </div>
       </div>
     </>
