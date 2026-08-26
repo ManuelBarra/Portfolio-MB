@@ -37,6 +37,10 @@ export function ContactRoom({ personal }: ContactRoomProps) {
           </a>
         ))}
       </div>
+
+      <a href="/cv" className="contact-cv-cta">
+        Download CV (PDF) →
+      </a>
     </div>
   )
 }

@@ -2,7 +2,10 @@
 
 import { createContext, useContext, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
-import type { Locale, LocalizedText } from '@/types/resume'
+import type { Locale } from '@/types/resume'
+import { t } from '@/lib/i18n'
+
+export { t }
 
 interface LocaleContextValue {
   locale: Locale
@@ -48,10 +51,4 @@ export function useLocale(): LocaleContextValue {
     throw new Error('useLocale must be used within a LocaleProvider')
   }
   return ctx
-}
-
-/** Resolve a LocalizedText field for the given locale, with a safe fallback. */
-export function t(text: LocalizedText | undefined | null, locale: Locale): string {
-  if (!text) return ''
-  return text[locale] ?? text.es ?? text.en ?? ''
 }

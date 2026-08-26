@@ -165,6 +165,7 @@
       "startDate": "2024-07",
       "endDate": "2024-12",
       "current": false,
+      "type": "break",
       "location": "",
       "description": {
         "es": "Pausa profesional dedicada a viajar, entre el fin de mi etapa en DigitalMakers y el inicio en Genomcore.",
@@ -530,6 +531,10 @@
         "es": "Academia digital inmersiva para la cultura Hip Hop, con currículo gamificado en 6 disciplinas (MCing, DJing, Breaking, Graffiti, Knowledge, Production), canvas 3D interactivo, analizador de barras, entrenador de freestyle, sistema de crews, y agentes de IA propios construidos con el SDK de Anthropic.",
         "en": "Immersive digital academy for Hip Hop culture, with a gamified curriculum across 6 disciplines (MCing, DJing, Breaking, Graffiti, Knowledge, Production), an interactive 3D canvas, a bars analyzer, a freestyle trainer, a crew system, and custom AI agents built with the Anthropic SDK."
       },
+      "impact": {
+        "es": "Plataforma full-stack propia con agentes de IA en producción sobre el SDK de Anthropic",
+        "en": "Own full-stack platform with production AI agents built on the Anthropic SDK"
+      },
       "status": {
         "es": "En desarrollo activo",
         "en": "In active development"
@@ -554,6 +559,10 @@
         "es": "Consultora de Business Intelligence, IA y desarrollo de software a medida, cofundada junto a un socio. Proyectos en Chile, Ecuador, España, Reino Unido y EE. UU.",
         "en": "Business Intelligence, AI and custom software development consultancy, co-founded with a partner. Projects in Chile, Ecuador, Spain, the UK and the US."
       },
+      "impact": {
+        "es": "Cofundador técnico · clientes activos en 5 países",
+        "en": "Technical co-founder · active clients across 5 countries"
+      },
       "url": "https://sadata.io",
       "repo": "",
       "image": "/projects/sadata.jpg",
@@ -575,6 +584,7 @@
       },
       "url": "https://www.malb.dev",
       "repo": "github.com/ManuelBarra/personal-portfolio",
+      "image": "/projects/malbdev.jpg",
       "technologies": [
         "Next.js",
         "React Three Fiber",
@@ -609,6 +619,10 @@
         "es": "Migración completa del frontend de Genomcore, de WordPress a Next.js y React.js. Desarrollo de genomcore.com desde cero.",
         "en": "Complete frontend migration for Genomcore, from WordPress to Next.js and React.js. Built genomcore.com from scratch."
       },
+      "impact": {
+        "es": "100% en todas las métricas de Lighthouse",
+        "en": "100% on every Lighthouse metric"
+      },
       "url": "https://genomcore.com",
       "repo": "",
       "image": "/projects/genomcore-proj.jpg",
@@ -626,6 +640,10 @@
       "description": {
         "es": "Plataforma de salud basada en IA que integra genómica, biomarcadores y datos de estilo de vida. Dashboards, contenido multi-idioma y tienda online, construida en Next.js.",
         "en": "AI-powered health platform integrating genomics, biomarkers and lifestyle data. Dashboards, multi-language content and an online store, built in Next.js."
+      },
+      "impact": {
+        "es": "100% en todas las métricas de Lighthouse",
+        "en": "100% on every Lighthouse metric"
       },
       "url": "https://www.madeofgenes.ai",
       "repo": "",

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback, useRef } from 'react'
+import Image from 'next/image'
 import type { ResumeProject } from '@/types/resume'
 import { useLocale, t } from '@/hooks/useLocale'
 
@@ -166,7 +167,15 @@ export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
                 >
                   <div className="proj-card__visual-grid" />
                   {project.image
-                    ? <img src={project.image} alt={isActive ? project.name : ''} className="proj-card__visual-img" />
+                    ? (
+                      <Image
+                        src={project.image}
+                        alt={isActive ? project.name : ''}
+                        fill
+                        sizes="320px"
+                        className="proj-card__visual-img"
+                      />
+                    )
                     : (
                       <span className="proj-card__visual-label" style={{ color: accent }}>
                         {project.name}
@@ -186,7 +195,14 @@ export function ProjectsRoom({ projects: allProjects }: ProjectsRoomProps) {
                 {/* Content */}
                 <div className="proj-card__body">
                   <div className="proj-card__name">{project.name}</div>
-                  <p className="proj-card__desc">{t(project.description, locale)}</p>
+                  {project.impact && (
+                    <div className="proj-card__impact" style={{ color: accent }}>
+                      ▲ {t(project.impact, locale)}
+                    </div>
+                  )}
+                  <p className={`proj-card__desc${isActive ? ' proj-card__desc--full' : ''}`}>
+                    {t(project.description, locale)}
+                  </p>
                   <div className="proj-card__tech">
                     {project.technologies.slice(0, 4).map(tech => (
                       <span key={tech} className="proj-card__tech-tag">{tech}</span>

@@ -1,76 +1,118 @@
 # Portfolio Manuel Barra — CLAUDE.md
 
 ## Proyecto
-Portfolio 3D interactivo personal de Manuel Barra Lazo.
+Portfolio interactivo personal de Manuel Barra Lazo. SPA de una sola página (`src/app/page.tsx`) organizada en 7 "rooms" horizontales navegables con scroll/teclado/swipe, más una ruta `/cv` con el mismo contenido en formato documento imprimible.
 
 ## Stack
-- **Framework:** Next.js 15 (App Router, turbopack en dev)
+- **Framework:** Next.js 14.2 (App Router), fijado a `^14.2.14` en `package.json` (no v15)
 - **Lenguaje:** TypeScript strict
-- **Estilos:** Tailwind CSS v4 + CSS custom properties (sin config file)
-- **3D:** React Three Fiber + @react-three/drei + @react-three/postprocessing
+- **Estilos:** Tailwind CSS v4 + `@theme` en `src/styles/globals.css` (sin `tailwind.config.*`)
+- **3D:** React Three Fiber + @react-three/drei + @react-three/postprocessing (instalados, pero actualmente sin uso activo en la app — ver sección "Componentes 3D")
 - **Animaciones:** GSAP + ScrollTrigger + Framer Motion
-- **Estado:** Zustand + React hooks locales
-- **Datos:** JSON estático en `src/data/resume.json` (source of truth)
-- **Package manager:** pnpm
+- **Estado:** Zustand (store sin uso activo) + hooks locales de React
+- **Datos:** JSON estático en `src/data/resume.json` (source of truth), bilingüe ES/EN
+- **Package manager:** pnpm 9.15.0 (ver sección "Comandos")
 
-## Tema Visual "Phoenician"
+## Tema Visual "MANU.OS — Cyberpunk"
+Definido en `@theme` dentro de `src/styles/globals.css`:
 ```
---color-primary:   #FF6B35  (Naranja fuego)
---color-secondary: #004E89  (Azul profundo)
---color-accent:    #F7B32B  (Dorado)
---color-bg-dark:   #0A0E27  (Noche azul)
---color-bg-light:  #FAFAFA  (Casi blanco)
+--color-bg-0:      #03060d  (fondo principal)
+--color-bg-1:      #0a0f1e
+--color-bg-2:       #111827
+--color-bg-card:   #0d1321
+--color-neon:      #3DDCFF  (acento primario)
+--color-indigo:    #5B7CFF
+--color-magenta:   #FF3CAC
+--color-green:     #00FF88
+--color-amber:     #FFB800
+--color-red:       #FF4757
+--color-text-primary:   #E8ECF4
+--color-text-secondary: #8892A8
+--color-text-muted:     #6E7F99
 ```
+El tema "Phoenician" (naranja/azul/dorado) de versiones anteriores ya no existe en el código.
 
 ## Tipografía
-- Headings: `Playfair Display` (serif, italic)
-- Body: `Inter` (sans)
-- Código: `JetBrains Mono`
+Cargadas vía `next/font/google` en `src/app/layout.tsx`, expuestas como CSS vars en `globals.css`:
+- `--font-body` → Space Grotesk
+- `--font-display` (headings) → Syne, con fallback a Space Grotesk
+- `--font-mono` → JetBrains Mono
+- `--font-crt` (HUD/boot/números decorativos) → VT323
 
-## Layout
-- Hero: grid asimétrico `63fr 37fr` (canvas 3D / info)
-- Fibonacci spacing: `--spacing-*` en globals.css
+## Arquitectura — "Rooms" + HUD
+`src/app/page.tsx` es un client component que orquesta 7 rooms en un contenedor `.world` desplazado con `translate3d` (no es scroll-snap nativo). Navegación por teclado (flechas, números 1-7, Esc), rueda del ratón y swipe táctil. Cada room se envuelve en `RoomChrome` (grid decorativo, esquinas, tag, número).
 
-## Componentes existentes
+| Room | Ruta |
+|---|---|
+| RoomChrome (wrapper decorativo compartido) | `src/components/rooms/RoomChrome.tsx` |
+| HeroRoom | `src/components/rooms/HeroRoom.tsx` |
+| AboutRoom | `src/components/rooms/AboutRoom.tsx` |
+| ExperienceRoom | `src/components/rooms/ExperienceRoom.tsx` |
+| EducationRoom | `src/components/rooms/EducationRoom.tsx` |
+| SkillsRoom | `src/components/rooms/SkillsRoom.tsx` |
+| ProjectsRoom (galería 3D "coverflow" en CSS, cards en abanico con perspectiva, usa `next/image`) | `src/components/rooms/ProjectsRoom.tsx` |
+| ContactRoom (incluye CTA "Download CV" que enlaza a `/cv`) | `src/components/rooms/ContactRoom.tsx` |
+
+HUD (overlay fijo sobre las rooms):
+
 | Componente | Ruta |
 |---|---|
-| Scene (Canvas 3D) | `src/components/3d/Scene.tsx` |
-| FireSphere (placeholder Phoenix) | `src/components/3d/FireSphere.tsx` |
-| Phoenix (modelo GLB) | `src/components/3d/Phoenix.tsx` |
-| Hero | `src/components/cv/Hero.tsx` |
-| Experience | `src/components/cv/Experience.tsx` |
-| Skills | `src/components/cv/Skills.tsx` |
-| Button | `src/components/ui/Button.tsx` |
-| Input | `src/components/ui/Input.tsx` |
-| Admin Panel | `src/app/admin/page.tsx` |
+| HudTop (barra superior) | `src/components/hud/HudTop.tsx` |
+| HudBottom (minimapa de navegación) | `src/components/hud/HudBottom.tsx` |
+| NavArrows | `src/components/hud/NavArrows.tsx` |
+| CustomCursor | `src/components/hud/CustomCursor.tsx` |
+| BootOverlay (pantalla de arranque tipo terminal) | `src/components/hud/BootOverlay.tsx` |
+| ThemeProvider | `src/components/ThemeProvider.tsx` |
+| JsonLd (datos estructurados SEO) | `src/components/JsonLd.tsx` |
+
+## Componentes 3D
+| Componente | Ruta | Estado |
+|---|---|---|
+| HeroMesh (grid de wireframe animado en `<canvas>` 2D, reacciona al cursor) | `src/components/3d/HeroMesh.tsx` | **Activo**, usado en `HeroRoom` vía `page.tsx` |
+| Scene (Canvas de React Three Fiber) | `src/components/3d/Scene.tsx` | Sin uso — no se importa en ningún sitio |
+| FireSphere (placeholder Phoenix, esfera de fuego con partículas) | `src/components/3d/FireSphere.tsx` | Sin uso — solo referenciada desde `Scene.tsx` |
+| Phoenix (fallback abstracto, geometrías animadas en espera del GLB) | `src/components/3d/Phoenix.tsx` | Sin uso — no se importa en ningún sitio |
+
+`HeroMesh` es Canvas API 2D pura (sin Three.js) y es el efecto visual realmente activo en el Hero. `Scene`/`FireSphere`/`Phoenix` siguen usando la paleta "Phoenician" antigua (`#FF6B35`, `#F7B32B`) y no están conectados a la app.
+
+## Página /cv
+`src/app/cv/page.tsx` es un Server Component que renderiza `resume.json` como documento plano imprimible/ATS-friendly (fondo claro, sin 3D ni cursor custom), con idioma vía `?lang=es|en`.
+
+| Componente | Ruta |
+|---|---|
+| CvPage (Server Component) | `src/app/cv/page.tsx` |
+| CvToolbar (cliente: selector de idioma + botón `window.print()`) | `src/app/cv/CvToolbar.tsx` |
+| CvViewportFix (cliente: revierte el `overflow: hidden` global de las rooms mientras esta ruta está montada) | `src/app/cv/CvViewportFix.tsx` |
 
 ## Datos del resume
 - Archivo maestro: `src/data/resume.json`
-- Hook: `src/hooks/useResume.ts` (carga JSON, persiste en localStorage como borrador)
-- Tipos TypeScript: `src/types/resume.ts`
-- Store Zustand: `src/stores/resumeStore.ts`
+- Tipos TypeScript: `src/types/resume.ts` (incluye `LocalizedText { es, en }` para todos los campos bilingües)
+- Hook de carga: `src/hooks/useResume.ts` — importa el JSON de forma dinámica, persiste un borrador en `localStorage` (`resume_draft`) y descarta drafts guardados antes de la migración a i18n (guarda por `typeof personal.title === 'object'`)
+- Store Zustand: `src/stores/resumeStore.ts` — existe pero no se usa en ningún componente actualmente; la app usa `useResume.ts` directamente
+- i18n:
+  - `src/lib/i18n.ts` — función pura `t(text, locale)` que resuelve `LocalizedText`, con fallback `es → en → ''`. Server-safe (sin `'use client'`), pensada para usarse desde Server Components como `cv/page.tsx`
+  - `src/hooks/useLocale.tsx` — Context de React (`LocaleProvider`/`useLocale`), persiste el locale en `localStorage`. Re-exporta `t` de `lib/i18n.ts` por comodidad de los client components
 
-## Modelo Phoenix 3D
-- Placeholder activo: `FireSphere` (esfera de fuego animada con GSAP + partículas)
-- Modelo final: colocar en `public/models/phoenix.glb`
-- Activar: importar `Phoenix` en `Scene.tsx` y reemplazar `FireSphere`
-
-## Admin Panel
-- URL: `/admin`
-- Auth: `NEXT_PUBLIC_ADMIN_PASSWORD` en `.env.local`
-- Guarda en localStorage. Para persistir en producción se necesita endpoint Git.
+## Comandos
+pnpm no está instalado globalmente en Windows y `corepack` falla con `EPERM` en `Program Files`. Para ejecutar scripts:
+```
+npx --yes pnpm@9.15.0 dev
+npx --yes pnpm@9.15.0 build
+npx --yes pnpm@9.15.0 type-check
+```
+Scripts disponibles (`package.json`): `dev`, `build`, `start`, `lint`, `lint:fix`, `type-check`, `format`, `format:check`.
 
 ## Convenciones
-- Estilos inline con CSS variables para componentes 3D (no mezclar Tailwind en canvas)
-- Tailwind solo para componentes UI (`Button`, `Input`, admin)
-- `gsap.context()` siempre con cleanup `ctx.revert()` en useEffect
-- `'use client'` solo donde se use hooks/DOM/Three.js
+- Estilos inline con CSS variables para componentes 3D/canvas (no mezclar Tailwind ahí)
+- Tailwind solo para componentes UI convencionales
+- `gsap.context()` siempre con cleanup `ctx.revert()` en `useEffect`
+- `'use client'` solo donde se usen hooks/DOM/Three.js/Canvas
+- Todo texto visible al usuario que provenga de `resume.json` debe tiparse como `LocalizedText` y resolverse con `t()`, nunca como string plano
 
-## Modelo Phoenix — próximos pasos
-1. Descargar de Sketchfab (buscar "phoenix bird" formato GLB, < 5MB)
-2. Optimizar con https://gltf.report o `gltf-pipeline`
-3. Copiar a `public/models/phoenix.glb`
-4. En `Scene.tsx`, reemplazar `<FireSphere />` por `<Phoenix />`
+## Pendientes conocidos
+- Falta `eslint.config.*` en la raíz — `next lint` cae al asistente interactivo en vez de ejecutar
+- Falta el modelo 3D real: `public/models/` solo contiene `.gitkeep`, sin `phoenix.glb`
+- `Scene.tsx`, `FireSphere.tsx`, `Phoenix.tsx` y `resumeStore.ts` son código sin uso activo (candidatos a eliminar o a conectar, según se decida)
 
 ## Documentación
-Ver `/docs/` para la documentación de diseño y arquitectura original del proyecto.
+Ver `/docs/` para documentación de diseño y arquitectura original del proyecto (puede estar desactualizada respecto al código actual; este archivo es la referencia viva).

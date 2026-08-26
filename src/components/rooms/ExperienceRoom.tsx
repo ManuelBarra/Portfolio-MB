@@ -30,7 +30,7 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
           {experience.map((exp, i) => (
             <div
               key={exp.id}
-              className={`exp-item ${i === activeIdx ? 'exp-item--active' : ''}`}
+              className={`exp-item ${i === activeIdx ? 'exp-item--active' : ''} ${exp.type === 'break' ? 'exp-item--break' : ''}`}
               onClick={() => setActiveIdx(i)}
               role="button"
               tabIndex={0}
@@ -47,7 +47,11 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
                 {formatDate(exp.startDate, false)} — {formatDate(exp.endDate, exp.current)}
                 {exp.parallel && <span className="exp-item__parallel"> · en paralelo</span>}
               </div>
-              <div className="exp-item__company">{exp.company}</div>
+              {exp.type === 'break' ? (
+                <div className="exp-item__break-label">{exp.company}</div>
+              ) : (
+                <div className="exp-item__company">{exp.company}</div>
+              )}
               <div className="exp-item__role">{t(exp.position, locale)}</div>
             </div>
           ))}
@@ -55,7 +59,9 @@ export function ExperienceRoom({ experience }: ExperienceRoomProps) {
 
         <div className="exp-detail">
           <div className="exp-detail__header">
-            <div className="exp-detail__company">{active.company}</div>
+            <div className={`exp-detail__company${active.type === 'break' ? ' exp-detail__company--break' : ''}`}>
+              {active.company}
+            </div>
             <div className="exp-detail__role">{t(active.position, locale)}</div>
             <div className="exp-detail__meta">
               <span>{active.location}</span>

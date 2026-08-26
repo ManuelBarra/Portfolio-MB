@@ -44,6 +44,7 @@ export interface ResumeExperience {
   endDate: string | null
   current: boolean
   parallel?: boolean
+  type?: 'work' | 'break'
   location: string
   description: LocalizedText
   technologies: string[]
@@ -62,6 +63,7 @@ export interface ResumeProject {
   id: string
   name: string
   description: LocalizedText
+  impact?: LocalizedText
   url?: string
   repo?: string
   technologies: string[]
